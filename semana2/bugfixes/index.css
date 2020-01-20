@@ -132,12 +132,12 @@ td button:hover {
     height: 100px;
 }
 
-.container-do-search img:hover {
-    opacity: 30%;
+#container-do-search img:hover { */
+     * opacity: 30%; 
 }
 
-.container-do-search img:active {
-    opacity: 100%;
+.container-do-search img:active { */
+     opacity: 100%;
 }
 
 #back-button {
