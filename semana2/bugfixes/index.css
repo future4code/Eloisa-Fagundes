@@ -35,7 +35,10 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background: none;
+    width: 30px;
+    height: 30px;
+    max-width: 100px;
 }
 
 .botao-amarelo {
@@ -134,7 +137,7 @@ td button:hover {
 }
 
 #container-do-search img:hover { */
-     * opacity: 30%; 
+   opacity: 30%; 
 }
 
 .container-do-search img:active { */
