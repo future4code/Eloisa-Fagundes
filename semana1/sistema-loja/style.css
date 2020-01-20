@@ -1,10 +1,17 @@
 * {
 margin: 10px 0px 10px 0px;
 }
+
 .logo{
  color: #ed1e79;
  font-family: 'Rock Salt', cursive;
  margin: 10px;
+ display: block;
+}
+
+#logo-lujinha-home{
+    float: left;
+    width: 70px;
 }
 
 .nav {
@@ -20,7 +27,7 @@ margin: 10px 0px 10px 0px;
 }
 
 a:hover {
-    background-color:#00FFF0 ;
+    background-color:#40e0d0;
     font-family: Helvetica, sans-serif;
     
 }
@@ -36,11 +43,12 @@ a:hover {
     padding: 10 px;
 }
 
+
 .footer {
     font-family: Helvetica, sans-serif;
     border-top-style: solid;
     border-color: white;
-    background-color: #00FFF0;
+    background-color: #40e0d0;
     height: 150px;
 }
 
