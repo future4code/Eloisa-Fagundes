@@ -1,50 +1,193 @@
+/* 
+CONFIGURAÇÕES 
+GERAIS
+*/
+
 * {
-    margin: 5px 15px 5px 15px;
+    margin:0;
+    font-family:'Roboto', sans-serif;
+}
+h1,h2 {
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.p {
+    line-height: 1.5; 
 }
 
 .logo img {
     float: left;
+    margin: 5px 15px 5px 15px;
 }
 
-.logo {
-    font-family:  'Abril Fatface', cursive;
-    align: left;
-    font-size: 3em;
-    color: #eac67a;
-}
-
+/* 
+MENU
+*/
 .nav {
     background-color:none;
     border-top-style: solid;
-    border-width: 1px;
-    border-color: #984b43;
-    margin: 15px 0px ; 
+    border-width: 2px;
+    border-color: #49274a;
+    margin-right: 50px;
     float: right;
-    color:#984b43;
+    margin-top: 60px;
+    text-align: right;
+    
 }
 
-a:link{
+a:link{ 
     text-decoration:none;
-    font-family:  'Abril Fatface', cursive;
+    font-family: 'Roboto Mono', monospace;
 }
 
 a:hover{
     text-decoration: underline;
-    color: #eac67a;
+    color: #d9b310;
 }
 
+/* 
+CONTEÚDO TÍTULO
++ HISTÓRIA
+*/
 .conteudo-titulo{
-    margin-top: 50px;
-    background-color: green;
-    vertical-align: middle;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 140px;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 20px;
 }
 
-.h1,h2 {
-    font-family:  'Abril Fatface', cursive; 
+#breve-historia {
+    padding: 30px;
+    background-color: #49274a;
+    color:#f8eee7;
 }
-.p,li {
+
+#minha-historia{
+    text-align: center;
     font-family:'Roboto', sans-serif;
+    line-height: 1.5;
+    color:#f8eee7;
+    font-size: 1.5em;
+}
+/* 
+EXPERIÊNCIA E FORMAÇÃO
+*/
+
+.formacao{
+background-color: #f8eee7;
+float: left;
+width: 50%;
+color:#272525;
+margin-top: 0px;
+padding-left: 0;
+}
+
+.formacao ul li {
+align-items: center;
+line-height: 1.5;
+font-weight: 600;
+font-family:'Roboto', sans-serif;
+margin-bottom: 10px;
+color:#3b3939;
+}
+
+.experiencia {
+    background-color: #f4dceb;
+    float: right;
+    width: 50%;
+    color: #272525;
+    margin-top: 0px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.experiencia ul li {
+    line-height: 1.5;
+    font-weight: 600;
+    font-family:'Roboto', sans-serif;
+    color: #3b3939;
+    margin-bottom: 10px;
+
+}
+
+/* 
+MEUS PROJETOS (HOME)
+*/
+.projetos-de-software {
+    background-color: #d9b310;
+    margin-top:0px;
+    margin-bottom: 0px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-family:'Roboto', sans-serif;
+    color:#3b3939;
+    text-align: center;
+}
+
+.projetos-de-software h2 {
+    padding-top: 250px;
+}
+
+figure img {
+    margin-left: 230px;
+    display: inline-block;
+    /* background-color: red; */
+    width: 400px;
+    height:400px;
+    padding-right: 180px;
+    padding-left:100px ;
+}
+
+/* 
+HABILIDADES COMPORTAMENTAIS
+*/
+
+.habilidades-comportamentais{
+    background-color: #f4dceb;
+    color: #272525;
+    margin-top: 0px;
+    padding-right: 0;
+    padding-left: 0; 
+    text-align: center;
+}
+
+.habilidades-comportamentais>ol{
+    padding: 20px 0px;
+    font-size: large;
+    font-weight: 600;
+}
+
+.habilidade-foco {
+    font-size: x-large;
+    /* background-color: red; */
+    padding-bottom: 20px;
+    font-style: oblique;
+    font-weight: 600;
+    color: #49274a;
+    line-height: 1.5;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.rodape {
+    background-color: yellow;
+    height: 200px;
 }
 
 
+.descricao-do-projeto {
+    text-align: center;
+    font-family:'Roboto', sans-serif;
+    line-height: 1.5;
+    background-color: red;
 
+}
+
+.tecnicas-utilizadas {
+    text-align: center;
+    position: sticky bottom;
+}
