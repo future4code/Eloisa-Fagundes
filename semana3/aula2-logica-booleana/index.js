@@ -31,7 +31,7 @@ VII.
     console.log ((respostaB)  + ("°F"))
 // C. 
     const respostaC =(((30-32)*9)/5+32)
-    console.log ((respostaCS) + ("°F"))
+    console.log ((respostaC) + ("°F"))
 
     const respostaC1 = ((30-273.15)*9)/5+273.15
     console.log ((respostaC1)+ ("°K")) 
