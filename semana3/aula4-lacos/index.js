@@ -38,16 +38,15 @@ console.log(menor)
  
 // B. 
 
-const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-const novaLista = []
-const numeroDeMultiplos = 10
+// const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// const novaLista = []
 
-for(const numero of arrayOriginal){
-    if (numero%numeroDeMultiplos === 0){
-        novaLista.push(numero)
-    }
-}
-console.log(novaLista)
+// for(const numero of arrayOriginal){
+//     if (arrayOriginal%10 === 0){
+//         novaLista.push(numero)
+//     }
+// }
+// console.log(novaLista)
 
 // C.  
 const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
