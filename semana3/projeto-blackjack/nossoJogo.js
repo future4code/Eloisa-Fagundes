@@ -14,28 +14,35 @@ import comprarCarta from './naoMexer.js'
  * 
  */
 
-{  
+{
    // pop-up BEM-VINDO
-   alert ("Bem vindo ao jogo de Blackjack!")
+   alert("Bem vindo ao jogo de Blackjack!")
 }
 // Alert Confirm QUER OUTRA RODADA? Se sim começar o jogo, se não exibir "O jogo acabou"
-let confirmacao = confirm ("Gostaria de jogar mais uma rodada?")
+let confirmacao = confirm("Gostaria de jogar mais uma rodada?")
 
-const carta1Jogador = comprarCarta ()
-const carta2Jogador = comprarCarta ()
-const carta1PC = comprarCarta ()
-const carta2PC = comprarCarta ()
-let ganhador = 0 
+const carta1Jogador = comprarCarta()
+const carta2Jogador = comprarCarta()
+const carta1PC = comprarCarta()
+const carta2PC = comprarCarta()
+let ganhador = 0
 
 const pontosJogador = carta1Jogador.valor + carta2Jogador.valor
 const pontosPC = carta1PC.valor + carta2PC.valor
 
-if (confirmacao === true){
+if (confirmacao === true) {
    // Mostra as cartas + pontuação no console
-   console.log ("Jogador - cartas", carta1Jogador.texto, carta2Jogador.texto, "pontuação", pontosJogador)
-   console.log ("PC - cartas", carta1PC.texto, carta2PC.texto,"pontuação",pontosPC )
+   console.log("Jogador - cartas", carta1Jogador.texto, carta2Jogador.texto, "pontuação", pontosJogador)
+   console.log("PC - cartas", carta1PC.texto, carta2PC.texto, "pontuação", pontosPC)
 
-// IMPRIME  "O jogo acabou" quando clica em cancelar
+   if (pontosJogador > pontosPC) {
+      console.log("Jogador Ganhou!")
+   } else if (pontosJogador < pontosPC) {
+      console.log("PC Ganhou!")
+   } else if (pontosJogador === pontosPC) {
+      console.log("Empate!")
+   }
+   // IMPRIME  "O jogo acabou" quando clica em cancelar
 } else {
-console.log ("O jogo acabou")
+   console.log("O jogo acabou")
 }
