@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Despesas</title>
+</head>
+
+<body>
+
+    <article class="controlador-de-despesas">
+        <h1>Controlador de Despesas</h1>
+        <p>Cadastrar Despesa</p>
+
+        <p>Valor
+            <input type="number" id="valor" class="valor" />
+        </p>
+
+        <p>Tipo
+            <select id="tipo" class="tipo">
+                <option value="casa">Casa</option>
+                <option value="viagem">Viagem</option>
+                <option value="roles">Rolês</option>
+            </select>
+        </p>
+
+        <p>Descrição
+            <input type="text" id="descricao" class="descricao" />
+        </p>
+
+        <button type="button" onclick="cadastrarDespesas()"> Cadastrar Despesa </button>
+    </article>
+
+    <article class="despesas-detalhadas">
+        <h2>Despesas Detalhadas</h2>
+
+        <p><select> Tipo (casa, viagem, rolês, outros)
+                <option>Casa</option>
+                <option>Viagem</option>
+                <option>Rolês</option>
+            </select>
+        </p>
+
+        <p>Valor Mínimo
+            <input type="number" />
+        </p>
+
+        <p>Valor Máximo
+            <input type="number" />
+        </p>
+
+        <button>Filtrar</button>
+        <button>Limpar Filtros</button>
+    </article>
+
+    <article class="extrato">
+        <h3>Extrato</h3>
+        Valor Total:<input type="number">
+    </article>
+
+    <main id="meu-historico">
+        
+    </main>
+</body>
+
+</html>

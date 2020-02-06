@@ -1,0 +1,36 @@
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: none;
+    margin-bottom: 1vh;
+}
+
+input {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 50%;
+}
+
+select {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 50%;
+}
+
+button {
+   grid-column: 3;
+   grid-row: 2;
+   max-width: 50%;
+}
+
+main {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    height: 50vh;
+}
+
+#segunda, #terca, #quarta, #quinta, #sexta, #sabado, #domingo {
+    border: 1px ;
+    border-style: solid;
+    text-align: center;
+}
