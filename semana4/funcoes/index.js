@@ -34,3 +34,6 @@ let trazerInformacoes = (nome, idade, _endereco, estudante) => {
 }
 
 console.log(trazerInformacoes(idade))
+
+     
+
