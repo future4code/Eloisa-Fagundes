@@ -17,6 +17,7 @@ Eu sugeriria o nome devolveArray
 
 
 /* Exercício 4  ESCRITA DE CÓDIGO*/
+
 // a.
 
 let transformarIdadeDeDogEmHumano = (idadeCachorro) => {
@@ -34,6 +35,3 @@ let trazerInformacoes = (nome, idade, _endereco, estudante) => {
 }
 
 console.log(trazerInformacoes(idade))
-
-     
-
