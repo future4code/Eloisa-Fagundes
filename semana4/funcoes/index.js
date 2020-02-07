@@ -2,11 +2,7 @@
 a. return array = [0, 1]
 b. return array = [0, 1, 2, 3, 4]
 c. return array = [0, 1, 2, 3, 4, 5, 6, 7]
-<<<<<<< HEAD
 */
-=======
-*/ 
->>>>>>> dce59e4e9467c99245c6065f24b6820601a91e66
 
 /* Exercício 2 INTERPRETAÇÃO DE CÓDIGO
 A. 
@@ -21,7 +17,7 @@ Eu sugeriria o nome devolveArray
 
 
 /* Exercício 4  ESCRITA DE CÓDIGO*/
-<<<<<<< HEAD
+
 // a.
 
 let transformarIdadeDeDogEmHumano = (idadeCachorro) => {
@@ -39,8 +35,3 @@ let trazerInformacoes = (nome, idade, _endereco, estudante) => {
 }
 
 console.log(trazerInformacoes(idade))
-=======
-
-     
-
->>>>>>> dce59e4e9467c99245c6065f24b6820601a91e66
