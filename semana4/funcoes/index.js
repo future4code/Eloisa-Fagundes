@@ -2,7 +2,7 @@
 a. return array = [0, 1]
 b. return array = [0, 1, 2, 3, 4]
 c. return array = [0, 1, 2, 3, 4, 5, 6, 7]
-*/ 
+*/
 
 /* Exercício 2 INTERPRETAÇÃO DE CÓDIGO
 A. 
@@ -17,6 +17,23 @@ Eu sugeriria o nome devolveArray
 
 
 /* Exercício 4  ESCRITA DE CÓDIGO*/
+// a.
+
+let transformarIdadeDeDogEmHumano = (idadeCachorro) => {
+    idadeHumano = idadeCachorro * 7
+    return idadeHumano
+}
+console.log(transformarIdadeDeDogEmHumano())
+
+
+// b.
+let trazerInformacoes = (nome, idade, _endereco, estudante) => {
+    estudante = sou || naoSou
+    minhasInformacoes = "nome" + idade + "endereco" + estudante
+    return "nome",  idade,  "endereco",  estudante
+}
+
+console.log(trazerInformacoes(idade))
 
      
 
