@@ -24,25 +24,24 @@ do array2.lenght. As impressões no console serão Quantidade total de numeros 1
 
 // 1. Podemos percorrer uma lista com while, for of e for.
 
-- EXEMPLO DE WHILE
-const listaDeNumeros = [1, 2, 3 ,4]
-let i=0
-while(i<4){
+// - EXEMPLO DE WHILE
+const listaDeNumeros = [1, 2, 3, 4]
+let i = 0
+while (i < 4) {
     console.log(i)
     ++i
 }
 
- - EXEMPLO DE FOR OF:
-const listaDeNumeros = [1, 2, 3 ,4]
+//  - EXEMPLO DE FOR OF:
+const listaDeNumeros = [1, 2, 3, 4]
 
-for(const numero of listaDeNumeros){
+for (const numero of listaDeNumeros) {
     console.log(numero)
 }
 
-- EXEMPLO DE FOR:
-const listaDeNumeros = [1, 2, 3 ,4]
-for (let i = 0; i < 4; i++){
-    const numero = listaDeNumeros
+// - EXEMPLO DE FOR:
+const listaDeNumeros = [1, 2, 3, 4]
+for (let i = 0; i < 4; i++) {
     console.log(listaDeNumeros)
 }
 
@@ -53,19 +52,17 @@ c.) true
 d.) true
 e.) false
 
-
-
 // 3.
 
 Não funciona pois const não foi declarada e não existe uma variável pedindo somente os números pares.
 Segue abaixo uma meneira de fazer com que o código retorne a mensagem esperada.
 */
 
-const listaDeNumeros= [0, 1, 2, 3, 4, 5, 6, 7, 8]
+const listaDeNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 const novaLista = []
 
-for(const quantidadeDeNumerosPares of listaDeNumeros){
-    if(quantidadeDeNumerosPares%2 === 0){
+for (const quantidadeDeNumerosPares of listaDeNumeros) {
+    if (quantidadeDeNumerosPares % 2 === 0) {
         novaLista.push(quantidadeDeNumerosPares)
     }
 }
@@ -78,30 +75,44 @@ let a = 1
 let b = 3
 let c = 2
 
-if (a === b & b===c) {
+if (a === b && a === c && b === c) {
     console.log("equilatero")
-} else if 
-    (a === b & b!=c) {
-        console.log("isóceles")
-    } else {
-        (a!=b & b!=c)
-        console.log("escaleno")
-    }
+} else if (a === b || b === c || c === a) {
+    console.log("isósceles")
+} else if (a != b & a != c & b != c) {
+    console.log("escaleno")
+}
 
 // 5.  
- 
+
 let primeiroValor = 10
 let segundoValor = 25
-
+// verificação do maior valor
 if (primeiroValor > segundoValor) {
     console.log("O maior valor é:" + primeiroValor)
-} else {
-    (primeiroValor < segundoValor) 
+} else if (primeiroValor < segundoValor) {
     console.log("O maior valor é:" + segundoValor)
+} else {
+    console.log("Os valores são iguais.")
+}
 
-    if (primeiroValor % segundoValor === 0){
-        console.log(primeiroValor + "não é divisível por" + segundoValor)
-    }
+// verificação se o número é divisível
+const resultadoDaPrimeiraDivisao = primeiroValor % segundoValor
+const resultadoDaSegundaDivisao = segundoValor % primeiroValor
+
+if (resultadoDaPrimeiraDivisao === 0) {
+    console.log(primeiroValor + " é divisível por " + segundoValor)
+} else if (resultadoDaSegundaDivisao === 0) {
+    console.log(segundoValor + " é divisível por " + primeiroValor)
+} else {
+    console.log(primeiroValor + " não é divisível por " + segundoValor + " e nem " + segundoValor + " é divisível por " + primeiroValor)
+}
+
+// verificação da diferença
+if (primeiroValor > segundoValor) {
+    console.log("a diferença entre eles é " + (primeiroValor - segundoValor))
+} else {
+    console.log("a diferença entre eles é " + (segundoValor - primeiroValor))
 }
 
 /* ------> EXERCICIO DE FUNÇÕES
@@ -111,4 +122,3 @@ if (primeiroValor > segundoValor) {
 
 
 
-    
