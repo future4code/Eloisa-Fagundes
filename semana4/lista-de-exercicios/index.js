@@ -115,10 +115,28 @@ if (primeiroValor > segundoValor) {
     console.log("a diferença entre eles é " + (segundoValor - primeiroValor))
 }
 
-/* ------> EXERCICIO DE FUNÇÕES
-1.
-2.
-*/
+//  ------> EXERCICIO DE FUNÇÕES
+
+// 1. Criar array e mostrar 2o maior e 2o menor
+
+const meuArray = [1, 10, 3, 9, 67, 2, 0, 78, 25, 12]
+
+function trazerNumeros(array) {
+    array.sort(function (a, b) {
+        return a - b
+    })
+    const segundoMenor = array[1]
+    const segundoMaior = array[array.length - 2]
+
+    console.log(segundoMaior)
+    console.log(segundoMenor)
+}
+
+trazerNumeros(meuArray)
 
 
-
+// 2. Mostrar alert e invocar.
+let alerta = function () {
+    alert("Hello Future4!")
+}
+alerta()
