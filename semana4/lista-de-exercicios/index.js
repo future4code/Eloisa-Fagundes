@@ -140,3 +140,30 @@ let alerta = function () {
     alert("Hello Future4!")
 }
 alerta()
+
+// ---------> EXERCICIOS DE OBJETOS
+
+/* 1.
+Devemos usar arrays quando necesssitamos organizar os elementos em lista (números, strings, etc) e
+utilizanos objetos para elementos que queremos inserir como variáveis.
+*/
+
+// 2.
+let lado1 = 1
+let lado2= 2
+
+class criaRetangulo {
+    constructor(largura, altura, perimetro, area) {
+            this.largura = largura
+            this.altura = altura
+            this.perimetro = perimetro
+            this.area = area
+    }
+}
+
+const criaNovoObjeto = new criaRetangulo(4, 6, (2*(4 + 6)), (4*6)  )
+console.log (criaNovoObjeto)
+
+// 3.
+// 4.
+// 5.
