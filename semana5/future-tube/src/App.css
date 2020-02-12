@@ -1,0 +1,159 @@
+* {
+  margin:0;
+}
+
+.grid {
+display:grid;
+}
+
+header {
+display:grid;
+padding-left: 2%;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+background-color: orange;
+height: 80px;
+align-items: center;
+margin-bottom: 0;
+font-family: 'Open Sans', sans-serif;
+color: honeydew;
+}
+
+
+nav {
+height: 100%;
+width: 170px;
+position: fixed;
+top: 0;
+left: 0;
+padding-top: 95px;
+font-family: 'Open Sans', sans-serif;
+}
+
+nav a {
+display:block;
+text-align: left;
+padding: 10px;
+font-size: 1.5em;
+text-decoration: none;
+color: grey;
+}
+
+/* INPUT DO HEADER */
+input { 
+grid-column: 4/5;
+grid-template-rows: 1fr 1fr 1fr;
+width: 60%;
+height: 35%;
+color: grey;
+justify-items: right;
+font-family: 'Open Sans', sans-serif;
+}
+
+/* HOME */
+main {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr;
+width: 200px;
+column-gap: 20px;
+row-gap: 20px;  
+margin-left: 170px;
+margin-top: 20px;
+border-left: grey 2px solid;
+}
+
+article {
+border: green 1px solid;
+height: 400px;
+width: 100%;
+justify-items: center;
+font-size: 15pt;
+font-family: 'Open Sans', sans-serif;
+}
+
+img {
+border: #000000 solid 1px;
+width: 340px;
+}
+
+
+.footer {
+display:grid;
+padding-left: 2%;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+background-color: grey;
+color:honeydew;
+height: 80px;
+text-align: left;
+margin-top: 1vh;
+align-items: center;
+bottom:0;
+font-family: 'Open Sans', sans-serif;
+}
+
+/* PÁGINAS DE VÍDEO */
+/* INPUT DO HEADER */
+.input-paginas-com-video {
+grid-column: 4/5;
+grid-template-rows: 1fr 1fr 1fr;
+width: 60%;
+height: 35%;
+color: grey;
+justify-items: right;
+font-family: 'Open Sans', sans-serif;
+} 
+
+video { 
+width: 71%; 
+margin-left: 170px;
+padding-top: 1%;
+border: none;
+}
+
+h1 {
+text-align: left;
+font-size: 40pt;
+} 
+
+.titulo-videos{
+font-size: 40pt ;
+margin-left: 170px;  
+}
+
+button {
+width: 150px;
+height: 30px;
+grid-column-start: 2;
+font-size: 1.5em;
+border: rgb(63, 59, 59) solid 1px;
+border-radius: 5px;
+}
+
+.botoes-alinhamento {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr;
+}
+
+.sidebar-videos-sugeridos img{
+width: 300px;
+border: none;
+padding-top: 4px;
+text-decoration: none;
+}
+
+.sidebar-videos-sugeridos{
+display: block;
+justify-items: right;
+font-size: 1.5em;
+font-family: 'Open Sans', sans-serif;
+text-decoration: none;
+color: rgb(78, 75, 75);
+height: 100%;
+width: 20%;
+position: fixed;
+top: 0;
+right: 0;
+padding-top: 105px;
+margin-right: 15px;
+}
