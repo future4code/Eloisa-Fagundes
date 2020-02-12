@@ -14,8 +14,3 @@ function BigCard(props) {
 }
 
 export default BigCard
-
-{/* <img src={require("./imagens/user-icon")} /> */ }
-// {props.texto}
-{/* <h2>Eloisa</h2>
-                <p>Olá, sou a Eloisa. Sou estudante de Web Full Stack na Future4</p> */}
