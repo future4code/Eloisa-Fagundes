@@ -1,0 +1,18 @@
+.comentarios-e-likes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+   } 
+
+.likes {
+    grid-column: 3;
+}
+
+.comentarios {
+    grid-column: 4;
+    justify-items: right;
+}
+
+button {
+    text-decoration: none;
+}
