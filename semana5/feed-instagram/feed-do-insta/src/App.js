@@ -1,32 +1,22 @@
-import React from 'react';
-import './App.css';
-import ImagemPrincipal from './Coments/ImagemPrincipal/ImagemPrincipal'
-import PageSection from './Coments/PageSection/PageSection'
-import MostrarComentarios from './Coments/MostrarComentarios/MostrarComentarios';
-import MostrarLikes from './Coments/MostrarLikes/MostrarLikes'
+import React from 'react'
+import './App.css'
+import Post from './Components/Post/Post'
+import styled from 'styled-components'
+
+const Feed=styled.div`
+align-items:center;
+display:flex;
+flex-direction:column;
+`
 
 function App() {
   return (
-    <div className="Primeiro-Post">
-<PageSection titulo="Future4.br"/>
-<ImagemPrincipal imagem= { require = ("./Fotos/Post-Rosa.png") } alt="imagem rosa" />
-<MostrarLikes iconeCoracao={require = ("./Icones/favourite.svg")} alt="coração de like" />
-<MostrarComentarios iconeComentario={require = ("")} alt="comentario" />
-
-
-
-<div className="Segundo-Post">
-<PageSection titulo="Future4.br"/>
-<ImagemPrincipal imagem={require= ("")} alt="" />
-<MostrarLikes />
-<MostrarComentarios />
-    </div>
-
-    </div>
-
-
-
-  );
+    <Feed>
+      <Post />
+      <Post />
+      <Post />
+    </Feed>
+  )
 }
 
-export default App;
+export default App
