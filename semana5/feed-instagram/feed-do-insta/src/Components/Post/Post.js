@@ -17,7 +17,7 @@ padding: 10px;
 `
 
 const imagemPrincipal = require("../../Fotos/Post-rosa.png")
-const iconeComentarioFeed = require("../../Icones/comment_icon.svg")
+
 
 function Post() {
     return (
@@ -26,7 +26,7 @@ function Post() {
             <ImagemPrincipal url={imagemPrincipal} />
             <PostActions>
                 <MostrarLikes  />
-                <MostrarComentarios url={iconeComentarioFeed} />
+                <MostrarComentarios />
             </PostActions>
         </PostBox>
     )
