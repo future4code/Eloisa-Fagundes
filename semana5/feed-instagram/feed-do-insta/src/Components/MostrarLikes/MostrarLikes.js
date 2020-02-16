@@ -1,9 +1,14 @@
 import React from 'react'
 import './MostrarLikes.css'
+import styled from 'styled-components'
 
 const iconeNotLiked = require("../../Icones/favorite-white.svg")
 const iconeLiked = require("../../Icones/favorite.svg")
 
+const Container = styled.div`
+display: flex;
+align-items: center;
+`
 
 class MostrarLikes extends React.Component {
   constructor(props) {
@@ -37,10 +42,10 @@ class MostrarLikes extends React.Component {
 
     console.log(this.state)
     return (
-      <div onClick={this.changeLike}>
+      <Container onClick={this.changeLike}>
         <img src={icone} alt="coração para curtir" />
         <div> {this.state.count} </div>
-      </div>
+      </Container>
     )
   }
 }

@@ -9,7 +9,7 @@ margin-left: 10px;
 function PageSection(props) {
   return (
     <NomeDoUsuario>
-      <h3>{props.titulo}</h3>
+      <p>{props.titulo}</p>
     </NomeDoUsuario>
   )
 }

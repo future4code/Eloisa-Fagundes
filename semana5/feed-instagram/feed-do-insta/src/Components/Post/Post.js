@@ -22,7 +22,7 @@ const iconeComentarioFeed = require("../../Icones/comment_icon.svg")
 function Post() {
     return (
         <PostBox>
-            <PageSection titulo="Future4.br" />
+            <PageSection titulo="future4.br" />
             <ImagemPrincipal url={imagemPrincipal} />
             <PostActions>
                 <MostrarLikes  />
