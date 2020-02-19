@@ -1,5 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { element, array } from 'prop-types'
+
+const ContainerTitle = styled.h1`
+display: flex;
+flex-direction:column;
+align-items:center;
+`
+const TarefaConcluida = styled.li `
+text-decoration: line-through;
+`
+
 
 class ListaDeTarefasBullets extends React.Component {
     constructor(props) {
@@ -12,7 +23,7 @@ class ListaDeTarefasBullets extends React.Component {
     }
 
 // definiu que esse evento muda com o value do input
-handleChange =  (event) => {
+lidaComMudanca =  (event) => {
 this.setState({inputAtual: event.target.value})
 }
 
@@ -22,6 +33,7 @@ adicionaTarefa = () => {
         id: Date.now(),
         texto: this.state.inputAtual,
         completa: false,
+        status: false,
     }
     this.setState({
         // caso a nova atrefa a ser inserida viesse antes da tarefa antiga, coloca o maisUmaTarefa antes do ...
@@ -32,17 +44,30 @@ adicionaTarefa = () => {
 }
 
 
+
     render() {
+        console.log(this.state)
         // sempre dentro do render, essa const define que a cada tarefa inserida, um novo bullet é
-        // criado na lista com a tarefa nova.
+        // criado na lista como a tarefa nova.
         const listaDeTarefas = this.state.arrayDeTarefas.map ((cadaTarefa, index) => {
-        return (<li key={index}>{cadaTarefa.texto}</li>)
+            if(cadaTarefa.completa){
+            return (<TarefaConcluida key={index} onClick={cadaTarefa.completa}>{cadaTarefa.texto}</TarefaConcluida>)
+            } else {
+                return (<li key={index}>{cadaTarefa.texto}</li>)
+            }
         })
+
         return (
             <div>
-                <input onChange={this.handleChange} value={this.state.inputAtual}></input>
+                <ContainerTitle> Lista De Tarefas </ContainerTitle>
+                <input onChange={this.lidaComMudanca} value={this.state.inputAtual}></input>
                 <button onClick={this.adicionaTarefa}>Adicionar Nova Tarefa</button>
-                <h1> Lista De Tarefas </h1>
+                <span>Filtro</span>
+                <select>
+                    <option value="Nenhum">Nenhum</option>
+                    <option value="Pendentes">Pendentes</option>
+                    <option value="Completas">Completas</option>
+                </select>
                 <ul>
                     {listaDeTarefas}
                 </ul>
