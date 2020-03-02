@@ -43,7 +43,13 @@ adicionaTarefa = () => {
     })
 }
 
-
+riscaTarefa =() => {
+    if (cadaTarefa.status === true){
+        return (TarefaConcluida)
+    } else {
+        return( '')
+    }
+}
 
     render() {
         console.log(this.state)
