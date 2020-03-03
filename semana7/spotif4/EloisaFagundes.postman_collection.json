@@ -19,12 +19,17 @@
 					},
 					{
 						"key": "auth",
+<<<<<<< HEAD
 						"value": "string",
+=======
+						"value": "eloisa",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
+<<<<<<< HEAD
 					"raw": "{\n\t\"name\": \"string\"\n}"
 				},
 				"url": {
@@ -33,6 +38,20 @@
 						"{{baseUrl}}"
 					],
 					"path": [
+=======
+					"raw": "{\n\t\"name\": \"terceira playlist\"\n}"
+				},
+				"url": {
+					"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/createPlaylist",
+					"protocol": "https",
+					"host": [
+						"us-central1-spotif4",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"playlists",
 						"createPlaylist"
 					]
@@ -91,7 +110,11 @@
 					{
 						"key": "auth",
 						"type": "text",
+<<<<<<< HEAD
 						"value": "string"
+=======
+						"value": "eloisa"
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 					},
 					{
 						"key": "Content-Type",
@@ -101,6 +124,7 @@
 				],
 				"body": {
 					"mode": "raw",
+<<<<<<< HEAD
 					"raw": "{\n\t\"playlistId\": \"string\",\n\t\"music\": {\n\t\t\"name\": \"string\",\n\t\t\"artist\": \"string\"\n\t}\n}"
 				},
 				"url": {
@@ -109,6 +133,20 @@
 						"{{baseUrl}}"
 					],
 					"path": [
+=======
+					"raw": "{\n\t\"playlistId\": \"baad3850-da0e-4278-a56a-4d47e84b4681\",\n\t\"music\": {\n\t\t\"name\": \"El alma y el cuerpo\",\n\t\t\"artist\": \"Bomba Estéreo\",\n\t\t\"url\": \"http://spoti4.future4.com.br/11.mp3\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+					"protocol": "https",
+					"host": [
+						"us-central1-spotif4",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"playlists",
 						"addMusicToPlaylist"
 					]
@@ -123,16 +161,32 @@
 				"header": [
 					{
 						"key": "auth",
+<<<<<<< HEAD
 						"value": "string",
+=======
+						"value": "eloisa",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"type": "text"
 					}
 				],
 				"url": {
+<<<<<<< HEAD
 					"raw": "{{baseUrl}}/playlists/getAllPlaylists",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+=======
+					"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getAllPlaylists",
+					"protocol": "https",
+					"host": [
+						"us-central1-spotif4",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"playlists",
 						"getAllPlaylists"
 					]
@@ -148,6 +202,7 @@
 					{
 						"key": "auth",
 						"type": "text",
+<<<<<<< HEAD
 						"value": "string"
 					}
 				],
@@ -157,13 +212,32 @@
 						"{{baseUrl}}"
 					],
 					"path": [
+=======
+						"value": "eloisa"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/searchPlaylist?playlistName=\"terceira playlist\"",
+					"protocol": "https",
+					"host": [
+						"us-central1-spotif4",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"playlists",
 						"searchPlaylist"
 					],
 					"query": [
 						{
 							"key": "playlistName",
+<<<<<<< HEAD
 							"value": "string"
+=======
+							"value": "\"terceira playlist\""
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						}
 					]
 				}
@@ -177,11 +251,22 @@
 				"header": [
 					{
 						"key": "auth",
+<<<<<<< HEAD
 						"value": "string",
+=======
+						"value": "eloisa",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"type": "text"
 					}
 				],
 				"url": {
+<<<<<<< HEAD
 					"raw": "{{baseUrl}}/playlists/getPlaylistMusics/string",
 					"host": [
 						"{{baseUrl}}"
@@ -190,6 +275,20 @@
 						"playlists",
 						"getPlaylistMusics",
 						"string"
+=======
+					"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getPlaylistMusics/d69342f8-ab17-4b69-8f35-efb44a6871cc",
+					"protocol": "https",
+					"host": [
+						"us-central1-spotif4",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"playlists",
+						"getPlaylistMusics",
+						"d69342f8-ab17-4b69-8f35-efb44a6871cc"
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 					]
 				}
 			},
@@ -203,6 +302,7 @@
 					{
 						"key": "auth",
 						"type": "text",
+<<<<<<< HEAD
 						"value": "string"
 					}
 				],
@@ -212,13 +312,32 @@
 						"{{baseUrl}}"
 					],
 					"path": [
+=======
+						"value": "eloisa"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/deletePlaylist?playlistId=8f8bbb82-0ddc-4ac8-b135-ebfcd0efa5e9",
+					"protocol": "https",
+					"host": [
+						"us-central1-spotif4",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"playlists",
 						"deletePlaylist"
 					],
 					"query": [
 						{
 							"key": "playlistId",
+<<<<<<< HEAD
 							"value": "string"
+=======
+							"value": "8f8bbb82-0ddc-4ac8-b135-ebfcd0efa5e9"
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						}
 					]
 				}
@@ -233,6 +352,7 @@
 					{
 						"key": "auth",
 						"type": "text",
+<<<<<<< HEAD
 						"value": "string"
 					}
 				],
@@ -242,22 +362,76 @@
 						"{{baseUrl}}"
 					],
 					"path": [
+=======
+						"value": "eloisa"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/removeMusicFromPlaylist?playlistId=baad3850-da0e-4278-a56a-4d47e84b4681&musicId=2b1cae0d-dfdc-41f7-b898-a4d0470442f5",
+					"protocol": "https",
+					"host": [
+						"us-central1-spotif4",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						"playlists",
 						"removeMusicFromPlaylist"
 					],
 					"query": [
 						{
 							"key": "playlistId",
+<<<<<<< HEAD
 							"value": "string"
 						},
 						{
 							"key": "musicId",
 							"value": "string"
+=======
+							"value": "baad3850-da0e-4278-a56a-4d47e84b4681"
+						},
+						{
+							"key": "musicId",
+							"value": "2b1cae0d-dfdc-41f7-b898-a4d0470442f5"
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 						}
 					]
 				}
 			},
 			"response": []
+<<<<<<< HEAD
+=======
+		},
+		{
+			"name": "getAllPlaylists",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth",
+						"value": "eloisa",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getAllPlaylists",
+					"protocol": "https",
+					"host": [
+						"us-central1-spotif4",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"playlists",
+						"getAllPlaylists"
+					]
+				}
+			},
+			"response": []
+>>>>>>> ad76428025f1e0e0ae43ebf537af8ac56ea3482f
 		}
 	],
 	"protocolProfileBehavior": {}
