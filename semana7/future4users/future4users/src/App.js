@@ -7,8 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      telaAtual: "cadastro",
-      textoDoBotao: "Ir para página de lista"
+      telaAtual: "cadastro"
     }
   }
 
@@ -20,19 +19,13 @@ class App extends React.Component {
     }
   }
 
-  trocaTextoDoBotao = () => {
-    if (this.state.telaAtual === "cadastro") {
-      this.setState({ textoDoBotao: "Ir para página de lista" })
-    } else {
-      this.setState ({textoDoBotao: "Ir para cadastro"})
-    }
-  }
-
 
   render() {
     return (
       <div>
-        <button text={this.textoDoBotao} onClick={this.trocarDePagina}></button>
+        <button onClick={this.trocarDePagina}>
+        {this.state.telaAtual === "cadastro" ? ("Ir para página de lista") : ("Ir para cadastro")}
+        </button>
         {this.state.telaAtual === "cadastro" ? (<PaginaDeCadastro />) : (<ListaDeUsuarios />)}
       </div>
     )
