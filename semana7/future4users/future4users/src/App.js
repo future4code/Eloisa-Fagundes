@@ -1,6 +1,6 @@
 import React from 'react'
-import PaginaDeCadastro from './Components/PaginaDeCadastro/PaginaDeCadastro'
 import ListaDeUsuarios from './Components/ListaDeUsuarios/ListaDeUsuarios'
+import FormCadastro from './Components/PaginaDeCadastro/PaginaDeCadastro'
 
 
 class App extends React.Component {
@@ -21,12 +21,12 @@ class App extends React.Component {
 
 
   render() {
-    return (
+  const mudaTextoDoBotao = this.state.telaAtual === "cadastro" ? ("Ir para página de lista") : ("Ir para cadastro")
+    
+  return (
       <div>
-        <button onClick={this.trocarDePagina}>
-        {this.state.telaAtual === "cadastro" ? ("Ir para página de lista") : ("Ir para cadastro")}
-        </button>
-        {this.state.telaAtual === "cadastro" ? (<PaginaDeCadastro />) : (<ListaDeUsuarios />)}
+        <button onClick={this.trocarDePagina}>{mudaTextoDoBotao}</button>
+        {this.state.telaAtual === "cadastro" ? (<FormCadastro />) : (<ListaDeUsuarios />)}
       </div>
     )
   }
