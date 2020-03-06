@@ -1,23 +1,24 @@
 import React from 'react'
-import axios from'axios'
+import axios from 'axios'
 
-baseUrl = "https://www.metaweather.com//api/location/(woeid)/(date)/"
+const baseUrl = "https://www.metaweather.com//api/location/(woeid)/(date)/"
 
 class ListaDeCidades extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            woeid: "",
-            date:""
+            woeid: [],
+            date: []
 
         }
     }
-
-    render(){
-        return(
+placesList = [/* Nairobi*/ 1528488, /* Mombassa*/ 1528335, /* Addis Ababa*/ 1313090, /*Cape Town*/ 1591691, /* Windhoek*/ 1466719]
+ 
+    render() {
+        return (
             <div>
                 <select>
-                    <option></option>
+        <option>{this.placesList}</option>
                 </select>
             </div>
         )

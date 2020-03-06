@@ -3,7 +3,9 @@ import axios from 'axios'
 import ListaDeCidades from './Components/ListaDeCidades'
 
 
-baseUrl = "https://www.metaweather.com/api/location"
+
+const baseUrl = "https://www.metaweather.com//api/location/(woeid)/(date)/"
+
 function App() {
   return (
     <div className="App">
