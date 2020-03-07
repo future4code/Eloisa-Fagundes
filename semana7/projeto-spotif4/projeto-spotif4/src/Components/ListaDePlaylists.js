@@ -39,18 +39,29 @@ class ListaDePlaylists extends React.Component{
         })
 
         listaDePlaylistsPromessa.then(response => {
-            const mostraAsPlaylists = response.data.result
-            this.setState({ mostraAsPlaylists: mostraAsPlaylists})
+            const mostraTodasAsPlaylists = response.data.result.list
+            console.log(response)
+            this.setState({ mostraAsPlaylists: mostraTodasAsPlaylists})
+           
         }).catch(error => {
+            console.log()
             alert("Não foi possível criar sua playlist. Por favor tente na próxima vida.")
             this.setState({ mostraAsPlaylists: []})
         })
     }
 
+    componentDidMount() {
+        this.buscaNovaPlaylist()
+    }
 
-    // componentDidMount() {
-    //    this.buscaNovaPlaylist()
-    // }
+     componentDidUpdate(previousProps) {
+        
+             const guardaPlaylist = this.state.mostraAsPlaylists
+             if (previousProps.transferirNome !== this.props.transferirNome) {
+                  this.buscaNovaPlaylist()
+             }
+         }
+     
 
     apagarPlaylist = (idDaPlaylist) => {
         const promessaApagarPlaylist = axios.delete(`${baseUrl}/playlists/deletePlaylist?playlistId=s${idDaPlaylist}`, {
@@ -67,16 +78,14 @@ class ListaDePlaylists extends React.Component{
     }
 
     render() {
-       console.log(this.state.mostrarAsPlaylist)
+        console.log(this.state.mostraAsPlaylists[this.state.mostraAsPlaylists.length-1].name, this.props.transferirNome)
         return(
             <ul>
                 {this.state.mostraAsPlaylists.map (playlist => (
                     <li key={playlist.id}>
                          {playlist.name}
-                          <span onClick={()=> this.apagarPlaylist(playlist.id)}>DELETE</span></li>
+                          <span onClick={()=> this.apagarPlaylist(playlist.id)}>x</span></li>
                 ))} 
-
-
             </ul>
         )
     }

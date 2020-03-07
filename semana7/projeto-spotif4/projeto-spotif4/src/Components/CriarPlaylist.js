@@ -35,13 +35,12 @@ class criarPlaylist extends React.Component {
                 auth: "eloisa",
             }
         })
- 
-
         promessaNovaPlaylist.then(response => {
             console.log("playlist criada com sucesso!")
         }).catch(error => {
             console.log(error.response.data.message)
         })
+        this.props.transferirNome(this.state.name)
     }
 
     render() {

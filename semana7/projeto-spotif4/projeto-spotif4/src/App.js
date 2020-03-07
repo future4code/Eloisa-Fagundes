@@ -10,17 +10,31 @@ class App extends React.Component {
     super(props)
     this.state = {
       name: "",
+      newName:'name'
     } 
+  }
+
+
+  transferirNome = (name1) => {
+    console.log(name1)
+    this.setState({ newName: name1})
   }
 
     render () {
       return (
         <div>
           <div>
-            <CriarPlaylist></CriarPlaylist>
+          <CriarPlaylist 
+           transferirNome={this.transferirNome}
+          >
+            
+          </CriarPlaylist>
           </div>
           <div>
-            <ListaDePlaylists> </ListaDePlaylists>
+            <ListaDePlaylists 
+             transferirNome={this.state.newName}
+            > 
+            </ListaDePlaylists>
           </div>
         </div>
       )
