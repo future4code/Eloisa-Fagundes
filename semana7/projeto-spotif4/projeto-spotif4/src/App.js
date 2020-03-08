@@ -10,31 +10,33 @@ class App extends React.Component {
     super(props)
     this.state = {
       name: "",
-      newName:'name'
     } 
   }
 
 
-  transferirNome = (name1) => {
-    console.log(name1)
-    this.setState({ newName: name1})
+  // transferirNome = (name) => {
+  //   console.log(name)
+  // }
+
+  lidacomMudancaDeTela = () => {
+    if(this.state.telaAtual === 'criar nova playlist') {
+      this.setState({telaAtual: 'mostrar minhas playlists'})
+    } else {
+      this.setState({telaAtual:'criar nova playlist'})
+    }
   }
 
+
     render () {
+      const textoDoBotao = this.state.telaAtual === 'criar nova playlist' ? 'mostrar minhas playlists': 'Criar nova Playlist'
       return (
         <div>
           <div>
-          <CriarPlaylist 
-           transferirNome={this.transferirNome}
-          >
-            
-          </CriarPlaylist>
+            <button onClick={this.lidacomMudancaDeTela}>{textoDoBotao}</button>
+            {this.state.telaAtual === 'criar nova playlist' ? <CriarPlaylist 
+            transferirNome={this.transferirNome}/> : <ListaDePlaylists />  }
           </div>
           <div>
-            <ListaDePlaylists 
-             transferirNome={this.state.newName}
-            > 
-            </ListaDePlaylists>
           </div>
         </div>
       )
@@ -42,3 +44,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+//  

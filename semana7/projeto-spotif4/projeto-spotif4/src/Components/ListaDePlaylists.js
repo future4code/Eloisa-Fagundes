@@ -4,20 +4,21 @@ import styled from 'styled-components'
 
 // Eu preciso que você mostre uma lista com as playlists e que o usuario consiga apagar também.
 // Porque essa página não é uma função nem uma classe?
+// Bug1: Lista Não aparece, pois o array mostraPlaylist aparece undefined(R: colocar.list para pegar somente o array de lista)
+// Bug2: Loop infinito depois de usar o componentDidUpdate
+// Na verdade, o problema não está no didUpdate, está na função buscaNovaPlaylist
+// Bug3: Botão de deletar não funciona (R: esqueci o s de string no id)
 
 const baseUrl = "https://us-central1-spotif4.cloudfunctions.net/api"
 
-// const mockMostraAsPlaylists = [
-//     {
-//         id: "1",
-//         name:"Playlist 1"
-//     },
-//     {
-//         id: "2",
-//         name:"Playlist 2"
-//     }
-// ]
+const BoxDeConteudo = styled.div`
+padding: 10vw;
+`
 
+const DeletaPlaylist = styled.span `
+color:red;
+font-style: oblique;
+`
 class ListaDePlaylists extends React.Component{
     constructor(props){
         super(props)
@@ -40,8 +41,9 @@ class ListaDePlaylists extends React.Component{
 
         listaDePlaylistsPromessa.then(response => {
             const mostraTodasAsPlaylists = response.data.result.list
-            console.log(response)
             this.setState({ mostraAsPlaylists: mostraTodasAsPlaylists})
+            console.log(response)
+            // this.buscaNovaPlaylist()
            
         }).catch(error => {
             console.log()
@@ -54,23 +56,26 @@ class ListaDePlaylists extends React.Component{
         this.buscaNovaPlaylist()
     }
 
-     componentDidUpdate(previousProps) {
+    // componentDidUpdate(nextProps) {
         
-             const guardaPlaylist = this.state.mostraAsPlaylists
-             if (previousProps.transferirNome !== this.props.transferirNome) {
-                  this.buscaNovaPlaylist()
-             }
-         }
+    //          const guardaPlaylist = this.state.mostraAsPlaylists
+    //          if (nextProps.transferirNome !== this.props.mostraAsPlaylists) {
+    //               this.setState ({
+    //                   name: nextProps.name
+    //               })
+    //          }
+    //      }
      
 
     apagarPlaylist = (idDaPlaylist) => {
-        const promessaApagarPlaylist = axios.delete(`${baseUrl}/playlists/deletePlaylist?playlistId=s${idDaPlaylist}`, {
+        const promessaApagarPlaylist = axios.delete(`${baseUrl}/playlists/deletePlaylist?playlistId=${idDaPlaylist}`, {
             headers: {
                 auth: "eloisa",
             }
         })
         promessaApagarPlaylist.then(response => {
             alert("playlist apaga com sucesso!")
+            this.buscaNovaPlaylist()
         }).catch(error => {
             alert("Não foi possível apagar sua playlist! :(")
             console.log(error.response.data.message)
@@ -78,16 +83,19 @@ class ListaDePlaylists extends React.Component{
     }
 
     render() {
-        console.log(this.state.mostraAsPlaylists[this.state.mostraAsPlaylists.length-1].name, this.props.transferirNome)
+        console.log(this.state.mostraAsPlaylists[this.state.mostraAsPlaylists.length-1].name)
         return(
+            <BoxDeConteudo>
             <ul>
                 {this.state.mostraAsPlaylists.map (playlist => (
                     <li key={playlist.id}>
                          {playlist.name}
-                          <span onClick={()=> this.apagarPlaylist(playlist.id)}>x</span></li>
+                          <DeletaPlaylist onClick={()=> this.apagarPlaylist(playlist.id)}> X</DeletaPlaylist></li>
                 ))} 
+                <hr />
             </ul>
-        )
+            </BoxDeConteudo>
+            )
     }
 }
 

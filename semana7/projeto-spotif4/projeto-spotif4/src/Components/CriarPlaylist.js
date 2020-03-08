@@ -5,12 +5,15 @@ import styled from 'styled-components'
 // Eu preciso que você crie uma nova playlist.
 // Porque a promessa é uma const? Não deveria ser um let?
 
-// const mockNovaPlaylist = [
-//     { name: "Playlist 1" },
-//     { name: "Playlist 2" }
-// }
 
 const baseUrl = "https://us-central1-spotif4.cloudfunctions.net/api"
+
+const GuardaOsInputs = styled.div `
+display: flex;
+flex-direction: column;
+align-content: center;
+align-items: center;
+`
 
 class criarPlaylist extends React.Component {
     constructor(props) {
@@ -45,14 +48,14 @@ class criarPlaylist extends React.Component {
 
     render() {
         return (
-            <div>
+            <GuardaOsInputs>
                 <input type="text"
                     value={this.state.name}
                     placeholder="recebe nome da playlist"
                     onChange={this.lidaComMudancaNome}>
                 </input>
                 <button onClick={this.lidaComSalvarPlaylist}>Cria nova Playlist</button>
-            </div>
+            </GuardaOsInputs>
         )
     }
 }
