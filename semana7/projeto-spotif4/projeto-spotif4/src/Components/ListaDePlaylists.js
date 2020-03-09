@@ -3,7 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 // Eu preciso que você mostre uma lista com as playlists e que o usuario consiga apagar também.
-// Porque essa página não é uma função nem uma classe?
+// Porque essa página não é uma função nem uma classe? Drrr... é UMA CLASSE, SIM!
 // Bug1: Lista Não aparece, pois o array mostraPlaylist aparece undefined(R: colocar.list para pegar somente o array de lista)
 // Bug2: Loop infinito depois de usar o componentDidUpdate
 // Na verdade, o problema não está no didUpdate, está na função buscaNovaPlaylist
@@ -19,15 +19,16 @@ const DeletaPlaylist = styled.span `
 color:red;
 font-style: oblique;
 `
-class ListaDePlaylists extends React.Component{
-    constructor(props){
+class ListaDePlaylists extends React.Component {
+    constructor(props) {
         super(props)
         this.state = {
             mostraAsPlaylists: [
-                {name:"",
-                 id:""
-        }
-            ],
+                {
+                    name: "",
+                    id: ""
+                }
+            ]
         }
     }
 
@@ -43,8 +44,6 @@ class ListaDePlaylists extends React.Component{
             const mostraTodasAsPlaylists = response.data.result.list
             this.setState({ mostraAsPlaylists: mostraTodasAsPlaylists})
             console.log(response)
-            // this.buscaNovaPlaylist()
-           
         }).catch(error => {
             console.log()
             alert("Não foi possível criar sua playlist. Por favor tente na próxima vida.")
@@ -55,16 +54,6 @@ class ListaDePlaylists extends React.Component{
     componentDidMount() {
         this.buscaNovaPlaylist()
     }
-
-    // componentDidUpdate(nextProps) {
-        
-    //          const guardaPlaylist = this.state.mostraAsPlaylists
-    //          if (nextProps.transferirNome !== this.props.mostraAsPlaylists) {
-    //               this.setState ({
-    //                   name: nextProps.name
-    //               })
-    //          }
-    //      }
      
 
     apagarPlaylist = (idDaPlaylist) => {

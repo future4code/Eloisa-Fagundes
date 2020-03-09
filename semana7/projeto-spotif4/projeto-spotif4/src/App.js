@@ -3,6 +3,8 @@ import axios from 'axios'
 import styled from 'styled-components'
 import CriarPlaylist from './Components/CriarPlaylist'
 import ListaDePlaylists from './Components/ListaDePlaylists'
+import DetalhesDaPlaylist from './Components/DetalhesDaPlaylist'
+// import InsereMusicaNaPlaylist from './Components/InsereMusicaNaPlaylist'
 
 
 class App extends React.Component {
@@ -14,9 +16,9 @@ class App extends React.Component {
   }
 
 
-  // transferirNome = (name) => {
-  //   console.log(name)
-  // }
+  transferirNome = (name) => {
+    console.log(name)
+  }
 
   lidacomMudancaDeTela = () => {
     if(this.state.telaAtual === 'criar nova playlist') {
@@ -37,6 +39,7 @@ class App extends React.Component {
             transferirNome={this.transferirNome}/> : <ListaDePlaylists />  }
           </div>
           <div>
+          <DetalhesDaPlaylist />
           </div>
         </div>
       )
