@@ -10,11 +10,13 @@ const criarNovaTarefa = (text) => {
     }
 }
 
-const removerTarefa = () => {
+const removerTarefa = (id) => {
     // Responsável por remover tarefa da lista
     return {
-        type:'REMOVE_TAREFA',
+        type:'REMOVER_TAREFA',
         payload : {
+            id: id
+            // FAZER ID CHEGAR VIA PARÂMETRO (linha13)
         }
     }
 }
