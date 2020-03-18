@@ -1,11 +1,10 @@
 import {combineReducers} from "redux"
-import novaTarefaReducer from './TarefasAddsERemovidas'
+import tarefas from './tarefas'
 
 // Recebe todos os reducers para depois enviar para o Store
 
 const origemReducer = combineReducers ({
-    // adiciona tarefa e remove tarefa
-    novaTarefaReducer: novaTarefaReducer
+    tarefas: tarefas 
 }) 
 
 export default origemReducer
