@@ -24,13 +24,13 @@ const tarefas = (state = estadoInicial, action) => {
                     ...itemTarefa, completou: !itemTarefa.completou
                 } : itemTarefa)
 
-        case 'LIDA_COM_TAREFA_COMPLETA': {
-            return novaTarefaCompleta
-        }
+        // case 'LIDA_COM_TAREFA_COMPLETA': {
+        //     return novaTarefaCompleta
+        // }
 
-        case 'LIDA_COM_MUDANCA_DE_LISTA': {
-            return novaTarefaCompleta
-        }
+        // case 'LIDA_COM_MUDANCA_DE_LISTA': {
+        //     return novaTarefaCompleta
+        // }
 
         default:
             return state

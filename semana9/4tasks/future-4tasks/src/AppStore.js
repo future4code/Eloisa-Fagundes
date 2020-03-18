@@ -9,7 +9,7 @@ const store = createStore(origemReducer)
 // 1. Crie **action-creators** para todas as actions que você mapeou. 
 // 2. Crie o layout estático (O layout não precisa estar relacionado com o da página de referência)
 
-function App() {
+function AppStore() {
   return (
 <Provider store = {store}>
     <AppContainer />
@@ -17,5 +17,5 @@ function App() {
   )
 }
 
-export default App
+export default AppStore
 

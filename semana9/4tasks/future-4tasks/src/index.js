@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppStore from './AppStore';
+import  AppStore from './AppStore';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<AppStore />, document.getElementById('root'));
