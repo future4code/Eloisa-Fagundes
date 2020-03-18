@@ -16,6 +16,7 @@ const AppContainer = props => {
             <ul>
                 <li>tarefa 1</li>
                 <li>tarefa 2</li>
+                <li>tarefa 3</li>
             </ul>
                <button 
                 onClick={() => props.dispatch(removerTarefa())}> 
