@@ -1,6 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const listaDeTarefas = () => {
+const ListaDeTarefas = () => {
     return (
         <div>
         <ul>
@@ -17,4 +18,12 @@ const listaDeTarefas = () => {
     )
 }
 
-export default listaDeTarefas
+const mapStateToProps = (state) => {
+    return {
+        
+    }
+}
+
+const mapDispatchToProps = () => {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListaDeTarefas)
