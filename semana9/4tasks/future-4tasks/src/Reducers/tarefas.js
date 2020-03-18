@@ -1,7 +1,7 @@
 
-const estadoInicial = [
-    {valorDaTarefa: "tarefa1"}
-]
+const estadoInicial = {
+    listaDeTarefas: []
+}
 
 const tarefas = (state = estadoInicial, action) => {
     switch (action.type) {
