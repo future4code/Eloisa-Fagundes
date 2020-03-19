@@ -11,7 +11,7 @@ class ListaDeTarefas extends React.Component {
             <ul>
            {this.props.listaDeAfazeres.map(tarefa => 
            <li key={tarefa.id}>{ tarefa.text }</li>
-           )}
+           )} 
             <span 
             // onClick={() => props.dispatch(removerTarefa())}
             > 

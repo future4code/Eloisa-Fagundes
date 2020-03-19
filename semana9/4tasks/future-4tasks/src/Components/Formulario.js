@@ -1,29 +1,53 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import { adicionarNovaTarefa } from '../Actions/Index'
+import { criarNovaTarefa } from '../Actions/Index'
 
-const formulario = () => {
-    return(
-        <form>
-        <input placeholder="O que deve ser feito?"></input>
-        <button 
-        // onClick=
-        // {() => props.dispatch(criarNovaTarefa())}
-        >
-        Adicionar nova tarefa 
+class Formulario extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            textoDoInput: ''
+        }
+    }
+
+    lidaComMudancaInput = (event) => {
+        this.setState({ textoDoInput: event.target.value })
+    }
+
+    adicionarTarefaAoClicar = (event) => {
+        console.log("Clicou!", this.state.textoDoInput)
+    }
+
+    render() {
+        return (
+            <form>
+                <input 
+                placeholder="O que deve ser feito?"
+                value={this.state.textoDoInput}
+                onChange={this.lidaComMudancaInput}>
+                </input>
+                <button
+                type="button"
+                onClick={this.adicionarTarefaAoClicar}
+                // {() => props.dispatch(criarNovaTarefa())}
+                >
+                    Adicionar nova tarefa
              </button>
-    </form>
-    )
+            </form>
+        )
+    }
 }
 
 const mapStateToProps = (state) => {
     return {}
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
-        // adicionarNovaTarefa: (text) => dispatch(adicionarNovaTarefa(text))
-     }
+        adicionarNovaTarefaNaLista: (text) => {
+            dispatch(criarNovaTarefa(text))
+        }
+    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (formulario)
+export default connect(mapStateToProps, mapDispatchToProps) (Formulario)
