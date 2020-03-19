@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+// import { adicionarNovaTarefa } from '../Actions/Index'
 
 const formulario = () => {
     return(
@@ -21,7 +22,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        adicionarNovaTarefa: (text) => dispatch(adicionarNovaTarefa(text))
+        // adicionarNovaTarefa: (text) => dispatch(adicionarNovaTarefa(text))
      }
 }
 

@@ -6,7 +6,8 @@
 // Remover tarefas completas
 // Filtrar as tarefas
 
-export default adicionarNovaTarefa = (text) => {
+
+const criarNovaTarefa = (text) => {
     // Adiciona uma tarefa
     return {
         type: 'ADD_NOVA_TAREFA',
