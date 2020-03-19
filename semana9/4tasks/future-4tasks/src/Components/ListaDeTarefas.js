@@ -1,29 +1,37 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const ListaDeTarefas = () => {
-    return (
-        <div>
-        <ul>
-        <li>tarefa 1</li>
-        <li>tarefa 2</li>
-        <li>tarefa  </li>
-        <span 
-        // onClick={() => props.dispatch(removerTarefa())}
-        > 
-         -X-
-        </span> 
-    </ul>
-        </div>
-    )
-}
 
-const mapStateToProps = (state) => {
-    return {
-        
+class ListaDeTarefas extends React.Component {
+
+    render (){
+        console.log(this.props.listaDeAfazeres)
+        return (
+            <div>
+            <ul>
+           {this.props.listaDeAfazeres.map(tarefa => 
+           <li key={tarefa.id}>{ tarefa.text }</li>
+           )}
+            <span 
+            // onClick={() => props.dispatch(removerTarefa())}
+            > 
+             -X-
+            </span> 
+        </ul>
+            </div>
+        )
     }
 }
 
-const mapDispatchToProps = () => {}
+
+const mapStateToProps = (state) => {
+    return {
+   listaDeAfazeres: state.tarefas.listaDeTarefas
+    }
+}
+
+const mapDispatchToProps = () => {
+    return {}
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListaDeTarefas)
