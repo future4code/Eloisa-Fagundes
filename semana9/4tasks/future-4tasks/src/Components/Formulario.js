@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const formulario = () => {
     return(
@@ -14,4 +15,14 @@ const formulario = () => {
     )
 }
 
-export default formulario
+const mapStateToProps = (state) => {
+    return {}
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        adicionarNovaTarefa: (text) => dispatch(adicionarNovaTarefa(text))
+     }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (formulario)
