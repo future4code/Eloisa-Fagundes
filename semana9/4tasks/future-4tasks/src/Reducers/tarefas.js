@@ -1,18 +1,24 @@
 
-const estadoInicial = [
-    {valorDaTarefa: "tarefa1"}
-]
+const estadoInicial = {
+    listaDeTarefas: [
+        {
+            id: 1,
+            text: "tarefa impossível",
+            completou: false
+        }
+    ]
+}
 
 const tarefas = (state = estadoInicial, action) => {
     switch (action.type) {
         case "ADD_NOVA_TAREFA":
             return [
-                ...state.valorDaTarefa,
-                {
-                    id: new Date().getTime(),
-                    text: action.text,
-                    completou: false
-                }
+                // ...state.valorDaTarefa,
+                // {
+                //     id: new Date().getTime(),
+                //     text: action.text,
+                //     completou: false
+                // }
             ]
 
         case "REMOVE_TAREFA":

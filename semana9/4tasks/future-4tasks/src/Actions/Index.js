@@ -1,3 +1,4 @@
+// Lista de actions creators
 // Adiciona uma tarefa
 // Apaga uma tarefa
 // toggle tarefa
@@ -5,7 +6,8 @@
 // Remover tarefas completas
 // Filtrar as tarefas
 
-const criarNovaTarefa = (text) => {
+
+export const criarNovaTarefa = (text) => {
     // Adiciona uma tarefa
     return {
         type: 'ADD_NOVA_TAREFA',

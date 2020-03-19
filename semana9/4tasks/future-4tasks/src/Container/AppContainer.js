@@ -1,37 +1,19 @@
 import React from 'react'
 import { connect } from "react-redux"
 import { criarNovaTarefa, removerTarefa} from '../Actions/Index'
+import Formulario from '../Components/Formulario'
+import ListaDeTarefas from '../Components/ListaDeTarefas'
+import BarraDeFerramentas from '../Components/BarraDeFerramentas'
 
 const AppContainer = props => {
     console.log(props.tarefas)
     return (
         <div>
         <h1>4Tasks</h1>
-            <form>
-                <input placeholder="O que deve ser feito?"></input>
-                <button onClick=
-                {() => props.dispatch(criarNovaTarefa())}>
-                     Adicionar nova tarefa </button>
-            </form>
-            <ul>
-                <li>tarefa 1</li>
-                <li>tarefa 2</li>
-            </ul>
-               <button 
-                onClick={() => props.dispatch(removerTarefa())}> 
-                 DELETAR 
-                </button> 
-            <div>
-                <button>Marcar Todas Como Completas</button>
-                <p>Filtros</p>
-                <button>Todas</button>
-                <button>Pendentes</button>
-                <button>Completas</button>
-            </div>
-            <div>
-                <button>Remover Todas Completas</button>
-            </div>
-        </div>
+           <Formulario />
+           <ListaDeTarefas />
+           <BarraDeFerramentas />
+         </div>
         
     )
 }
