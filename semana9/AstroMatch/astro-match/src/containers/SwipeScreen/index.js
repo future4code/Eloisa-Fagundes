@@ -8,6 +8,7 @@ import {mdiAccountMultipleCheck} from '@mdi/js'
 import {swipeLeft, swipeRight} from '../../components/UserSwipeCard/styled'
 import {updateCurrentPage} from '../../actions/route'
 import {Loader} from '../../components/Loader'
+import {getProfileToSwipe} from '../../actions/profiles'
 
 export class SwipeScreen extends Component {
 	constructor(props) {
@@ -42,6 +43,7 @@ export class SwipeScreen extends Component {
 	}
 
 	render() {
+		console.log(this.props.profileToSwipe)
 		const {profileToSwipe, goToMatchScreen} = this.props
 		const {currentAnimation} = this.state
 
@@ -56,10 +58,7 @@ export class SwipeScreen extends Component {
 				/>
 				<ContentWrapper>
 					{currentAnimation !== null && (<Loader/>)}
-					{profileToSwipe ? <UserSwipeCard
-						userToSwipe={profileToSwipe}
-						animationDirection={currentAnimation}
-					/> : (<Loader/>)}
+					{profileToSwipe ? <UserSwipeCard userToSwipe={profileToSwipe} animationDirection={currentAnimation}/> : (<Loader/>)}
 					<ButtonsWrapper>
 						<OptionButton onClick={this.onChooseOption('dislike')} option="dislike">X</OptionButton>
 						<OptionButton onClick={this.onChooseOption('like')} option="like">♥️</OptionButton>
@@ -78,11 +77,13 @@ SwipeScreen.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
+	profileToSwipe: state.profiles.profileToSwipe
 })
 
 const mapDispatchToProps = (dispatch) => {
 	return {
 		goToMatchScreen: () => dispatch(updateCurrentPage('MatchScreen')),
+		getProfileToSwipe: () => dispatch(getProfileToSwipe())
 	}
 }
 

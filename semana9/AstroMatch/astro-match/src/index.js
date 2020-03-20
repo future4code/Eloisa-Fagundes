@@ -5,6 +5,9 @@ import {Provider} from 'react-redux'
 import Router from './containers/Router'
 import styled, {createGlobalStyle} from 'styled-components'
 import ClearButton from './components/ClearButton'
+import { createStore, applyMiddleware } from 'redux'
+import rootReducer from './reducers'
+import thunk from 'redux-thunk'
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
@@ -31,6 +34,8 @@ const MainContainer = styled.div`
   background-color: white;
   box-shadow: 0 0 5px #0000000F;
 `
+
+const newStore = createStore(rootReducer, applyMiddleware(thunk))
 
 const App = () => {
 	return (
