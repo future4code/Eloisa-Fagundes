@@ -9,8 +9,10 @@ const profiles = (state = initialState, action) => {
         ...state,
         profileToSwipe: action.payload.profile
       }
+      default:
+      return state
   }
-  return state
+ 
 }
 
 export default profiles

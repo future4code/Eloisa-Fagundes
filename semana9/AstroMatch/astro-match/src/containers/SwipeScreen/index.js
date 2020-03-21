@@ -8,7 +8,8 @@ import {mdiAccountMultipleCheck} from '@mdi/js'
 import {swipeLeft, swipeRight} from '../../components/UserSwipeCard/styled'
 import {updateCurrentPage} from '../../actions/route'
 import {Loader} from '../../components/Loader'
-import {getProfileToSwipe} from '../../actions/profiles'
+import {getProfileToSwipe, chooseProfile} from '../../actions/profiles'
+
 
 export class SwipeScreen extends Component {
 	constructor(props) {
@@ -30,6 +31,7 @@ export class SwipeScreen extends Component {
 		}
 	}
 
+// Soter, não entendi muito bem esse onChooseOption com 2 ifs.
 	onChooseOption = (option) => () => {
 		let currentAnimation = option === 'dislike' ? swipeRight : swipeLeft
 
@@ -43,7 +45,8 @@ export class SwipeScreen extends Component {
 	}
 
 	render() {
-		console.log(this.props.profileToSwipe)
+		// Tirar esse console.log
+		// console.log(this.props.profileToSwipe)
 		const {profileToSwipe, goToMatchScreen} = this.props
 		const {currentAnimation} = this.state
 
@@ -83,7 +86,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
 	return {
 		goToMatchScreen: () => dispatch(updateCurrentPage('MatchScreen')),
-		getProfileToSwipe: () => dispatch(getProfileToSwipe())
+		getProfileToSwipe: () => dispatch(getProfileToSwipe()),
+		chooseProfile: (id,choice) => dispatch(chooseProfile(id,choice))
+
 	}
 }
 
