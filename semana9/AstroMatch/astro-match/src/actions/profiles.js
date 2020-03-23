@@ -6,17 +6,6 @@ import axios from 'axios'
 // 	  matches,
 // 	}
 //   })
-
-// export const toogleChooseProfile = (id, choice) => ({
-// 	type: "CHOOSE_PROFILE",
-// 	payload: {
-// 	  profile : 
-// 	  {
-// 		  id,
-// 	  choice
-// 	}
-// 	}
-//   })
   
 
 export const clearSwipes = () => async (dispatch) => {
@@ -36,6 +25,7 @@ export const getProfileToSwipe = () => async (dispatch) => {
 	dispatch(setProfileToSwipe(response.data.profile))
 }
 
+// Soter, pq não precisamos criara um action creator pra essa função e para as outras sim?
 export const chooseProfile = (id, choice) => async (dispatch) => {
 	const response = await axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/eloisa/choose-person', {
 		id, choice
@@ -43,4 +33,18 @@ export const chooseProfile = (id, choice) => async (dispatch) => {
 	console.log(response.data)
 	dispatch(getProfileToSwipe())
 }
+
+export const setMatchesToList = (matches) => ({
+	type: "SET_MATCHES",
+	payload: {
+		matches,
+	}
+})
+
+export const getMatches = () => async (dispatch) => {
+	const response = await axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/eloisa/matches")
+	console.log(response.data.id)
+	dispatch(setMatchesToList(response.data.matches))
+}
+
  

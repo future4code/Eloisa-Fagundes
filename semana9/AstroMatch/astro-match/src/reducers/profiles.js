@@ -1,6 +1,9 @@
+import { mdiConsoleNetworkOutline } from "@mdi/js"
+
 const initialState = {
-  profileToSwipe: undefined
+  profileToSwipe: undefined,
 }
+
 
 const profiles = (state = initialState, action) => {
   switch(action.type){
