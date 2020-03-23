@@ -6,6 +6,7 @@ import {mdiAccountSwitch} from '@mdi/js'
 import {updateCurrentPage} from '../../actions/route'
 import {Avatar, List, ListItem, ListText, MatchIcon} from './styled'
 import {getMatches} from '../../actions/profiles'
+import { matchList } from '../../reducers/routes'
 
 class MatchScreen extends Component {
 	componentDidMount() {
@@ -16,8 +17,6 @@ class MatchScreen extends Component {
 
 	render() {
 		const {goToSwipeScreen, matches} = this.props
-		console.log(this.getMatches)
-
 		return (
 			<div>
 				<AppBar
