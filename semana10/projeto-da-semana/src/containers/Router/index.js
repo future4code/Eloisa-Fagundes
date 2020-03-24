@@ -1,0 +1,32 @@
+import React from "react";
+import { ConnectedRouter } from "connected-react-router";
+import { Switch, Route } from "react-router-dom";
+import LoginPage from "../LoginPage";
+import Home from '../Home'
+import CreateTrip from '../CreateTrip'
+import TripDetails from '../TripDetails'
+
+
+
+
+const routes = {
+  root: "/",
+  applicationForm: "/application-form",
+  tripCreate: "trips-create",
+  tripDetails:"trip-details"
+};
+
+function Router(props) {
+  return (
+    <ConnectedRouter history={props.history}>
+      <Switch>
+        <Route exact path={routes.root} component={LoginPage} />
+        <Route exact path={routes.applicationForm} component={Home} /> 
+        <Route exact path={routes.tripCreate} component={CreateTrip} /> 
+        <Route exact path={routes.tripDetails} component={TripDetails} /> 
+      </Switch>
+    </ConnectedRouter>
+  );
+}
+
+export default Router;
