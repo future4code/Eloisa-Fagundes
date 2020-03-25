@@ -2,9 +2,9 @@ import React from "react";
 import { ConnectedRouter } from "connected-react-router";
 import { Switch, Route } from "react-router-dom";
 import LoginPage from "../LoginPage";
-import Home from '../Home'
-import CreateTrip from '../CreateTrip'
-import TripDetails from '../TripDetails'
+import Home from '../Home/HomeFormPage'
+import CreateTrip from '../CreateTrip/CreateTripPage'
+import TripDetails from '../TripDetails/TripDetailsPage'
 
 
 
