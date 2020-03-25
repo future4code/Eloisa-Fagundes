@@ -11,9 +11,10 @@ import TripDetails from '../TripDetails/TripDetailsPage'
 
 const routes = {
   root: "/",
+  // {LoginPage}
   applicationForm: "/application-form",
   tripCreate: "trips-create",
-  tripDetails:"trip-details"
+  tripDetails: "trip-details"
 };
 
 function Router(props) {
@@ -21,9 +22,9 @@ function Router(props) {
     <ConnectedRouter history={props.history}>
       <Switch>
         <Route exact path={routes.root} component={LoginPage} />
-        <Route exact path={routes.applicationForm} component={Home} /> 
-        <Route exact path={routes.tripCreate} component={CreateTrip} /> 
-        <Route exact path={routes.tripDetails} component={TripDetails} /> 
+        <Route exact path={routes.applicationForm} component={Home} />
+        <Route exact path={routes.tripCreate} component={CreateTrip} />
+        <Route exact path={routes.tripDetails} component={TripDetails} />
       </Switch>
     </ConnectedRouter>
   );
