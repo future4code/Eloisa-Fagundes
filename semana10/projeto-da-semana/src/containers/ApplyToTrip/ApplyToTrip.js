@@ -51,11 +51,11 @@ const loginForm = [
 ]
 
 
-class LoginAgencia extends  React.Component {
+class ApplyToTrip extends  React.Component {
     constructor(props) {
         super(props)
         this.state = {
-           formTraveller: {}
+           form: {}
         }
     }
 
@@ -64,8 +64,8 @@ class LoginAgencia extends  React.Component {
         
         const {name, value } = event.target
         this.setState({
-            formTraveller: {
-                ...this.state.formTraveller,
+            form: {
+                ...this.state.form,
                 [name]: value
             }
         })
@@ -73,14 +73,14 @@ class LoginAgencia extends  React.Component {
 
     handleSubmission = event => {
         event.preventDefault()
-        console.log(this.state.formTraveller)
+        console.log(this.state.form)
     }
 
     render() {
         return (
             <form onSubmit={this.handleSubmission}>
             <div>
-                {loginForm.map(field => {
+            {loginForm.map(field => (
                     <div key={field.name}>
                         <label htmlFor={field.label}>{field.label}: </label>
                         <input
@@ -89,7 +89,7 @@ class LoginAgencia extends  React.Component {
                             id={field.name}
                         />
                     </div>
-                })}
+                ))}
             </div>
             <button type="submit">Criar nova viagem</button>
             </form>
@@ -97,4 +97,4 @@ class LoginAgencia extends  React.Component {
     }
 
 }
-export default LoginAgencia
+export default ApplyToTrip

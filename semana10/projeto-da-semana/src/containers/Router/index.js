@@ -2,29 +2,33 @@ import React from "react";
 import { ConnectedRouter } from "connected-react-router";
 import { Switch, Route } from "react-router-dom";
 import LoginPage from "../LoginPage";
-import Home from '../Home/HomeFormPage'
-import CreateTrip from '../CreateTrip/CreateTripPage'
-import TripDetails from '../TripDetails/TripDetailsPage'
+import HomePage from '../HomePage/HomePage';
+import CreateTrip from '../CreateTrip/CreateTripPage';
+import TripDetails from '../TripDetails/TripDetailsPage';
+import ApplyToTrip from '../ApplyToTrip/ApplyToTrip';
+import ListTrip from '../ListTrips/ListTripsPage';
 
-
-
-
-const routes = {
+export const routes = {
+  // public
   root: "/",
-  // {LoginPage}
-  applicationForm: "/application-form",
-  tripCreate: "trips-create",
-  tripDetails: "trip-details"
+  login: "/login",
+  applyToTrip: "/application-form",
+  // private
+  tripCreate: "/trips/create",
+  tripDetails: "/trips/details",
+  tripList: "/trips/list"
 };
 
 function Router(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
-        <Route exact path={routes.root} component={LoginPage} />
-        <Route exact path={routes.applicationForm} component={Home} />
+        <Route exact path={routes.root} component={HomePage} />
+        <Route exact path={routes.login} component={LoginPage} />
+        <Route exact path={routes.applyToTrip} component={ApplyToTrip} />
         <Route exact path={routes.tripCreate} component={CreateTrip} />
         <Route exact path={routes.tripDetails} component={TripDetails} />
+        <Route exact path={routes.tripList} component={ListTrip} />
       </Switch>
     </ConnectedRouter>
   );
