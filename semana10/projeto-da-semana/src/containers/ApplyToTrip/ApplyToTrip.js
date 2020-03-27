@@ -68,7 +68,7 @@ class ApplyToTrip extends React.Component {
                             </div>
                         ))}
 
-                     {/* viagens */}
+                      {/* viagens  */}
                             <div key={tripsSelect.name}>
                                 <label htmlFor={tripsSelect.label}>{tripsSelect.label}:</label>
 
