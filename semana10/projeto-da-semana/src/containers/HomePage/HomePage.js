@@ -13,25 +13,25 @@ class HomePage extends React.Component {
         }
     }
 
-    componentDidMount() {
-        const token = window.localStorage.getItem("token")
-        if (token === null) {
-            this.props.goToLogin();
-        }
-    }
-
     render() {
+        const {goToApplication, goToLogin} = this.props
         return (
             <div>
                 <h1>Bem-vindo viajante interestelar!</h1>
-                <button>Inscreva-se</button>
-                <button>Agência</button>
+                <button
+                onClick={goToApplication}
+                >Inscreva-se em uma viagem interestelar!</button>
+                <button
+                onClick={goToLogin}
+                >Login para agência</button>
             </div>
         );
     }
 }
+
 const mapDispatchToProps = (dispatch) => ({
-    goToLogin: () => dispatch(push(routes.root))
+    goToLogin: () => dispatch(push(routes.login)),
+    goToApplication: () => dispatch(push(routes.applyToTrip))
 })
 
 export default connect(null, mapDispatchToProps)(HomePage);

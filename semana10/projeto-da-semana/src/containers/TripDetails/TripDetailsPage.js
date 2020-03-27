@@ -9,10 +9,20 @@ class TripDetails extends React.Component {
         }
     }
 
+ // componentDidMount() {
+    //     const token = window.localStorage.getItem("token")
+    //     if (token === null) {
+    //         this.props.goToLogin();
+    //     }
+    // }
+
+
+  
+    
     render() {
         return (
             <div>
-                <p>Detalhes da viagem</p>
+                <h1>Detalhes da viagem</h1>
             </div>
         )
     };

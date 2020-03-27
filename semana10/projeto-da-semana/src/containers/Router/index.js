@@ -16,7 +16,7 @@ export const routes = {
   // private
   tripCreate: "/trips/create",
   tripDetails: "/trips/details",
-  tripList: "/trips/list"
+  tripsList: "/trips/list"
 };
 
 function Router(props) {
@@ -28,7 +28,7 @@ function Router(props) {
         <Route exact path={routes.applyToTrip} component={ApplyToTrip} />
         <Route exact path={routes.tripCreate} component={CreateTrip} />
         <Route exact path={routes.tripDetails} component={TripDetails} />
-        <Route exact path={routes.tripList} component={ListTrip} />
+        <Route exact path={routes.tripsList} component={ListTrip} />
       </Switch>
     </ConnectedRouter>
   );

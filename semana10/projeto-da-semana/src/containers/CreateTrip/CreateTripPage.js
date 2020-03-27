@@ -1,46 +1,8 @@
 import React from 'react'
+import { loginForm } from './variables'
+import { connect } from 'react-redux'
+import { planets } from './variables'
 
-const loginForm = [
-    {
-        name: "tour",
-        label: "Passeio",
-        type: "text",
-        required: true,
-        pattern: "[a-zA-Z]{5,}",
-        title: "Nome do passeio, no mínimo 5 letras."
-    },
-    {
-        name: "planet",
-        label: "Planeta",
-        type: "select",
-        required: true,
-        title: "Seleção de planeta requerido."
-    },
-    {
-        name: "date",
-        label: "Data da viagem",
-        type: "date",
-        required: true,
-        min: "2020-04-01",
-        title: "Data da viagem requerida, não pode ser a data atual ou data passada."
-    },
-    {
-        name: "description",
-        label: "Descrição da Viagem",
-        type: "text",
-        required: true,
-        pattern: "[a-zA-Z]{30,}",
-        title: "A descrição deve ter no mínimo 30 caracteres."
-    },
-    {
-        name: "descriptionInDays",
-        label: "Duração da viagem (em dias terrestres)",
-        type: "number",
-        required: true,
-        min: 50,
-        title: "As viagens devem durar no mínimo 50 dias."
-    }
-]
 
 
 class CreateTripPage extends  React.Component {
@@ -51,7 +13,13 @@ class CreateTripPage extends  React.Component {
         }
     }
 
-
+     // componentDidMount() {
+    //     const token = window.localStorage.getItem("token")
+    //     if (token === null) {
+    //         this.props.goToLogin();
+    //     }
+    // }
+    
     handleInputChange = (event) => {
         
         const {name, value } = event.target
@@ -69,6 +37,18 @@ class CreateTripPage extends  React.Component {
     }
 
     render() {
+      
+        const loginFormSelect = [
+            {
+                name: "planet",
+                label: "Planeta",
+                type: "select",
+                required: true,
+                title: "Seleção de planeta requerido.",
+                value: planets
+            }
+        ]
+
         return (
             <form onSubmit={this.handleSubmission}>
             <div>
@@ -82,11 +62,33 @@ class CreateTripPage extends  React.Component {
                         />
                     </div>
                 ))}
+
+                {loginFormSelect.map(selected => (
+                    <div key={selected.name}>
+                        <label htmlFor={selected.label}>{selected.label}:</label>
+
+                        <select 
+                        type={selected.type}
+                        value={this.state.form[selected.listPlanets]}
+                        id={selected.name}>
+                            <option>---------</option> */}
+                        {selected.value.map(planets => ( 
+                            <option>{planets}</option> 
+                         ))}
+                        </select>
+
+                    </div>
+                ))}
             </div>
             <button type="submit">Criar nova viagem</button>
+         
             </form>
         )
     }
-
 }
-export default CreateTripPage
+
+const mapStateToProps = (state) => ({
+    
+})
+
+export default connect(mapStateToProps)(CreateTripPage)

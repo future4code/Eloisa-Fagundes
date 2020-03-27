@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { push } from "connected-react-router";
+import { push } from "connected-react-router";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { login } from '../../actions/auth'
+import { routes } from '../Router/index'
 
 const LoginWrapper = styled.form`
   width: 100%;
@@ -37,7 +38,7 @@ class LoginPage extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, goToListTrips} = this.state;
 
     return (
       <LoginWrapper onSubmit={this.handleLogin}>
@@ -57,14 +58,15 @@ class LoginPage extends Component {
           value={password}
           required
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit" onClick={goToListTrips}>Login</Button>
       </LoginWrapper>
     );
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  login: (email, password) => dispatch(login(email, password))
+  login: (email, password) => dispatch(login(email, password)),
+  goToListTrips: () => dispatch(push(routes.tripsList))
 });
 
 export default connect(null, mapDispatchToProps)(LoginPage);
