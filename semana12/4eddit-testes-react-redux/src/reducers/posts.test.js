@@ -15,4 +15,4 @@ describe("Testa reducers", () => {
         expect(newStore.allPosts[0]).completed.toBe(false)
         expect(newStore.allPosts[0].text).completed.toBe(mockText)
         })
-})
+}G
