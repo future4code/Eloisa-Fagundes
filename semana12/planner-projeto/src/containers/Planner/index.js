@@ -5,6 +5,7 @@ import ToolBar from './Toolbar'
 import { listWeek } from '../../constants'
 
 import { Paper, Grid, Typography } from "@material-ui/core"
+import { getTasks } from "../../actions";
 
 
 
@@ -22,10 +23,21 @@ justify-content: center;
 `
 
 class Planner extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      tasksList: []
+    }
+  }
+
+
+  componentDidMount() {
+    this.props.getTasks()
+  }
 
   render() {
 
-  console.log(this.props.tasksList) //excluir
+    console.log(this.props.tasksList) //excluir
 
     return (
       <div>
@@ -38,9 +50,9 @@ class Planner extends React.Component {
               <DayOfWeek key={dayOfList}>
 
                 <Typography variant="h6" color="primary">{dayOfList}</Typography>
-                {this.props.allTasks
-                .filter(task => task.day === dayOfList)
-                .map(task => <li key={task.id}>{task.text}</li>)}
+                {this.props.tasks
+                  .filter(task => task.day === dayOfList)
+                  .map(task => <li key={task.id}>{task.text}</li>)}
 
               </DayOfWeek>
             ))}
@@ -53,9 +65,11 @@ class Planner extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  allTasks: state.todos.allTasks
+  tasks: state.todos.tasks
 })
 
-// const mapDispacthToProps = (dispatch) => { }
+const mapDispacthToProps = (dispatch) => ({
+  getTasks: () => dispatch(getTasks())
+})
 
-export default connect(mapStateToProps)(Planner);
+export default connect(mapStateToProps, mapDispacthToProps)(Planner);

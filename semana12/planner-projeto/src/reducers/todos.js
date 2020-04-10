@@ -1,42 +1,28 @@
 const initialState = {
-    allTasks : [
-        {
-            text:"Comprar pão",
-            day:"Segunda"
-
-        },
-        {
-            text:"Fazer pão",
-            day:"Terça"
-
-        },
-        {
-            text:"Comer o pão",
-            day:"Segunda"
-
-        }
-    ]
+    tasks : []
 }
 
 
-export const todos = (state=initialState, action) => {
+export const todos = (state = initialState, action) => {
     // console.log("action", action)  //excluir
     // console.log("state", state)  //excluir
     switch(action.type) {
         case "ADD_TASK":
-            const newTask = {
-                id:Date.now(),
-                text:action.payload.text
-            }
+            const newTask = action.payload.task
             return {
-                allTasks: 
+                tasks: 
                 [
                     newTask,
-                    ...state.allTasks
+                    ...state.tasks
                 ]
             }
+            case "SET_TASKS":
+                return {
+                        ...state,
+                        tasks:action.payload.tasks
+                  
+                }
         
-
         default:
             return state
     }
