@@ -3,7 +3,6 @@ export const listWeek = [
     "Terça",
     "Quarta",
     "Quinta",
-    "Quinta",
     "Sexta",
     "Sábado",
     "Domingo"

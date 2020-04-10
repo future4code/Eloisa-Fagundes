@@ -20,8 +20,8 @@ const initialState = {
 
 
 export const todos = (state=initialState, action) => {
-    console.log("action", action)  //excluir
-    console.log("state", state)  //excluir
+    // console.log("action", action)  //excluir
+    // console.log("state", state)  //excluir
     switch(action.type) {
         case "ADD_TASK":
             const newTask = {
