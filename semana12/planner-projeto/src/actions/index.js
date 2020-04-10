@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = "https://us-central1-missao-newton.cloudfunctions.net/generic/planner-sagan-eloisa"
+const baseUrl = "https://us-central1-missao-newton.cloudfunctions.net/generic/planner-sagan-elo"
 
 const setTasks = (tasks) => ({
     type: "SET_TASKS",
