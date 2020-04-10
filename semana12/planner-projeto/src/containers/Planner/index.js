@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import styled from 'styled-components'
-import ToolBar from './Toolbar'
+import React from "react"
+import { connect } from "react-redux"
 import { listWeek } from '../../constants'
+import { getTasks } from "../../actions"
+import ToolBar from './Toolbar'
+
+import styled from 'styled-components'
 
 import { Paper, Grid, Typography } from "@material-ui/core"
-import { getTasks } from "../../actions";
-
 
 
 const ListWrapper = styled(Grid)`
@@ -19,7 +19,6 @@ const DayOfWeek = styled(Paper)`
 padding: 1rem;
 align-items: center;
 justify-content: center;
-/* width: 7rem; */
 `
 
 class Planner extends React.Component {
@@ -36,8 +35,6 @@ class Planner extends React.Component {
   }
 
   render() {
-
-    console.log(this.props.tasksList) //excluir
 
     return (
       <div>
@@ -72,4 +69,4 @@ const mapDispacthToProps = (dispatch) => ({
   getTasks: () => dispatch(getTasks())
 })
 
-export default connect(mapStateToProps, mapDispacthToProps)(Planner);
+export default connect(mapStateToProps, mapDispacthToProps)(Planner)

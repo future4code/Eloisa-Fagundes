@@ -1,16 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = "https://us-central1-missao-newton.cloudfunctions.net/generic"
-
-// adiciona tarefa
-export const addTask = (task) => {
-    return {
-        type: 'ADD_TASK',
-        payload: {
-            task,
-        }
-    }
-}
+const baseUrl = "https://us-central1-missao-newton.cloudfunctions.net/generic/planner-sagan-eloisa"
 
 const setTasks = (tasks) => ({
     type: "SET_TASKS",
@@ -19,32 +9,34 @@ const setTasks = (tasks) => ({
     }
 })
 
-
 export const getTasks = () => async (dispatch) => {
-
     try {
-        const response = await axios.get(`${baseUrl}/planner-sagan-eloisa`)
+        const response = await axios.get(`${baseUrl}`)
         dispatch(setTasks(response.data))
-        console.log(response)
     } catch (error) {
         console.error(error.message)
         alert("Não foi possível mostrar a lista de tarefas.")
     }
 }
 
+const addTask = (task) => {
+    return {
+        type: 'ADD_TASK',
+        payload: {
+            task,
+        }
+    }
+}
 
-export const createTask = (text, day) => async () => {
-    console.log('entrou create task', text, day)
+export const createTask = (text, day) => async (dispatch) => {
     try {
-        await axios.post(`${baseUrl}/planner-sagan-eloisa`,
+        const response = await axios.post(`${baseUrl}`,
             {
                 "text": text,
                 "day": day
             }
-
-        ).then(response => {
-            console.log(response)
-        })
+        )
+        dispatch(addTask(response.data))
     } catch (error) {
         console.error(error.message)
         alert("Não foi possível criar sua tarefa!")
