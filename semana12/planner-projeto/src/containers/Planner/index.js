@@ -6,7 +6,7 @@ import ToolBar from './Toolbar'
 
 import styled from 'styled-components'
 
-import { Paper, Grid, Typography } from "@material-ui/core"
+import { Paper, Grid, Typography, Card, CardContent, ListItem } from "@material-ui/core"
 
 
 const ListWrapper = styled(Grid)`
@@ -15,7 +15,7 @@ justify-content: space-between;
 margin-top: 2rem;
 
 `
-const DayOfWeek = styled(Paper)`
+const DayOfWeek = styled(Card)`
 padding: 1rem;
 align-items: center;
 justify-content: center;
@@ -45,18 +45,20 @@ class Planner extends React.Component {
 
             {listWeek.map(dayOfList => (
               <DayOfWeek key={dayOfList}>
+                <CardContent>
 
                 <Typography variant="h6" color="primary">{dayOfList}</Typography>
                 {this.props.tasks
                   .filter(task => task.day === dayOfList)
-                  .map(task => <li key={task.id}>{task.text}</li>)}
-
+                  .map(task => <ListItem key={task.id}>{task.text}</ListItem>)}
+                  <br></br>
+              </CardContent>
               </DayOfWeek>
             ))}
 
           </ListWrapper>
         </ul>
-      </div>
+      </div >
     )
   }
 }
