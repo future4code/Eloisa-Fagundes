@@ -6,7 +6,7 @@ import ToolBar from './Toolbar'
 
 import styled from 'styled-components'
 
-import { Paper, Grid, Typography, Card, CardContent, ListItem } from "@material-ui/core"
+import { Grid, Typography, Card, CardContent, ListItem } from "@material-ui/core"
 
 
 const ListWrapper = styled(Grid)`

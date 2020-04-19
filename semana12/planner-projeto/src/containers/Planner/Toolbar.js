@@ -36,6 +36,7 @@ class ToolBar extends React.Component {
     handleOnclick = (event) => {
         event.preventDefault()
         this.props.createTask(this.state.inputText, this.state.selectDay)
+        this.setState({ selectDay: "", inputText:"" })
     }
 
     render() {
