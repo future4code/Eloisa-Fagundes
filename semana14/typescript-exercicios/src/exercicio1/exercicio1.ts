@@ -1,5 +1,4 @@
-
-// Exercício 1
+// Faça um programa que receba dois números e imprima no, terminal, as seguintes informações:
 
 let numero1: number = 15
 let numero2: number = 6
@@ -17,5 +16,5 @@ let resultadoMultiplicacao = (numero1 * numero2) //90
 console.log(resultadoMultiplicacao)
 
 //qual deles é maior
-let resultadoMaior = (numero1 < numero2 ? numero2 : numero1) //15
+let resultadoMaior = (numero1 > numero2 ? numero1 : numero2) //15
 console.log(resultadoMaior) 
