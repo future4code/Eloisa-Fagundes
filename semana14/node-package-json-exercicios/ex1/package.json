@@ -1,0 +1,25 @@
+{
+  "name": "ex1",
+  "version": "1.0.0",
+  "description": "Cria uma função calculadora",
+  "main": "ex1.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ex1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future4code/Eloisa-Fagundes.git"
+  },
+  "keywords": [
+    "calculadora",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Eloisa Fagundes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/future4code/Eloisa-Fagundes/issues"
+  },
+  "homepage": "https://github.com/future4code/Eloisa-Fagundes#readme"
+}

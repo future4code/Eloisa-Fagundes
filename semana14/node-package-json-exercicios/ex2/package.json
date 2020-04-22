@@ -1,0 +1,27 @@
+{
+  "name": "ex2",
+  "version": "1.0.0",
+  "description": "lista de tarefas que inclui tarefas no txt",
+  "main": "ex2.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ex2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future4code/Eloisa-Fagundes.git"
+  },
+  "keywords": [
+    "todolist",
+    "lista",
+    "tarefas",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Eloisa Fagundes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/future4code/Eloisa-Fagundes/issues"
+  },
+  "homepage": "https://github.com/future4code/Eloisa-Fagundes#readme"
+}
