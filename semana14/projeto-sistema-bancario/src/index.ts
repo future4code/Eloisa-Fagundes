@@ -1,11 +1,7 @@
-// 1. Criar um tipo para conta do usuário
-// 2. Tipo para as transações que serão salvas
-// 3. função createAccount p/ cadastrar usuário
-// 4. função getAllAccounts p/ cadstrar o usuario em um arquivo JSON
-// 5. Validação 18+ e mesnagem de erro caso não seja.
+import { readFileSync, writeFileSync } from 'fs'
+import * as moment from 'moment'
 
-
-import { readFileSync, readdir } from 'fs';
+moment.locale("pt-br")
 
 const funcionalidade = process.argv[4]
 const nome = process.argv[5]
@@ -15,7 +11,7 @@ const dataDeNascimento = process.argv[7]
 const jsonFile = "accounts.json"
 
 const data = readFileSync(jsonFile).toString()
-const dataJson = JSON.parse(data)    
+const dataJson = JSON.parse(data)
 
 
 type transacoes = {
@@ -33,7 +29,6 @@ type conta = {
 }
 
 
-
 function createAccount(): void {
     try {
         const novaConta: conta = {
@@ -43,8 +38,9 @@ function createAccount(): void {
             saldo: 0,
             extrato: []
         }
-        dataJson.push()
-        console.log(novaConta)
+        dataJson.push(novaConta)
+        writeFileSync(jsonFile, JSON.stringify(dataJson, null, 4))
+        console.log("Conta criada com sucesso!")
 
     } catch (error) {
         console.error("não foi possível criar sua conta.", error)
@@ -53,7 +49,21 @@ function createAccount(): void {
 
 
 if (funcionalidade === "criarConta") {
-    createAccount()
+
+    const dataDeNascimentoMoment = moment(dataDeNascimento, "DD/MM/YYYY")
+    const hoje = moment()
+
+    const idade = hoje.diff(dataDeNascimentoMoment, "years")
+    if (idade < 18) {
+        console.log("Você não tem idade mínima permitida pra criar uma conta.")
+    } else {
+        const contaPesquisada: object[] = dataJson.filter((conta: conta) => conta.CPF === CPF)
+        if (contaPesquisada.length >= 1) {
+            console.log("CPF já cadastrado!")
+        } else {
+            createAccount()
+        }
+    }
 }
 
 else if (funcionalidade === "pegarSaldo") {
@@ -70,6 +80,10 @@ else if (funcionalidade === "pagarConta") {
 
 else if (funcionalidade === "transferencia") {
     console.log("transferencia")
+}
+
+else if (funcionalidade === "buscarContas") {
+    console.log(data)
 }
 
 else if (funcionalidade === undefined) {
