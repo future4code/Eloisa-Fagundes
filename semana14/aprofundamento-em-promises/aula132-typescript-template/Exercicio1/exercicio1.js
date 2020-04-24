@@ -5,11 +5,18 @@ var fs_1 = require("fs");
 // lê o diretório
 fs_1.readdir("../textos", function (err, files) {
     console.log(files);
+    files.map(function (file) {
+        return fs_1.readFile("../textos/" + file, handleFileRead);
+        console.log(file);
+    });
 });
-// myPromise = new Promise((resolve,reject) => {
-// const handleFileRead = (err:Error, data:Buffer) => {
-//     try {
-//     } catch(e) {
-//         reject(err)
-//     }
-// }
+// lê o arquivo
+var handleFileRead = function (err, file) {
+    try {
+        var fileContent = file.toString();
+        console.log(fileContent);
+    }
+    catch (e) {
+        console.log(err);
+    }
+};

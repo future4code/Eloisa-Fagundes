@@ -7,32 +7,22 @@ import { readFile, readdir } from "fs";
 readdir("../textos", (err: Error, files: string[]) => {
     console.log(files)
 
+    files.map(file => {
+        return readFile("../textos/" + file, handleFileRead)
+        console.log(file)
+    })
+})
 // lê o arquivo
-const myPromise = new Promise((resolve, reject) => {
+        const handleFileRead = (err: Error, file: Buffer) => {
 
-    const handleFileRead = (err: Error, file: Buffer) => {
-       
-        files.map(file => {
-            
-        })
+            try {
+                const fileContent: string = file.toString()
+                console.log(fileContent)
 
-        try {
-            const fileContent: string = file.toString()
-            resolve(fileContent)
-
-        } catch (e) {
-            reject(err)
+            } catch (e) {
+                console.log(err)
+            }
         }
-    }
 
-    readFile("../texto", handleFileRead)
-})
 
-myPromise
-    .then((result: string) => {
-        console.log(result)
-    })
-    .catch((err) => {
-        console.log(err)
-    })
-})
+    
