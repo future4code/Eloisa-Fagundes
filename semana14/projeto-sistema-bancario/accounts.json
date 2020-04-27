@@ -3,21 +3,21 @@
         "nome": "Eloisa",
         "CPF": "123456789-12",
         "dataDeNascimento": "14/04/1991",
-        "saldo": 0,
+        "saldo": 2,
         "extrato": []
     },
     {
         "nome": "Bengala",
         "CPF": "987654321-21",
         "dataDeNascimento": "21/11/2000",
-        "saldo": 0,
+        "saldo": 100000,
         "extrato": []
     },
     {
         "nome": "Vitrola",
         "CPF": "957654541321-21",
         "dataDeNascimento": "19/11/2001",
-        "saldo": 0,
+        "saldo": 300000,
         "extrato": []
     }
 ]

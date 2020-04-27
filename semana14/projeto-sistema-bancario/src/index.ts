@@ -67,7 +67,14 @@ if (funcionalidade === "criarConta") {
 }
 
 else if (funcionalidade === "pegarSaldo") {
-    console.log("pegarSaldo")
+    const contaPesquisada: conta[] = dataJson.filter((conta: conta) => conta.CPF === CPF)
+    if (contaPesquisada.length >= 1) {
+        const saldoDaConta = contaPesquisada[0].saldo
+        console.log("O saldo é de: " + saldoDaConta)
+    } else {
+        console.log("Conta não encontrada.")
+    }
+    
 }
 
 else if (funcionalidade === "adicionarSaldo") {
