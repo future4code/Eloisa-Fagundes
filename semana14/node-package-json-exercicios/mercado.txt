@@ -1,0 +1,5 @@
+comprar pão
+comprar ovo
+comprar manteiga
+comprar leite
+comprar café
