@@ -7,12 +7,15 @@ export class Bank {
     fileManager: JSONFileManager;
 
 
-    constructor(_accounts: UserAccount[], _fileManager: JSONFileManager) {
-        this.accounts = _accounts
-        this.fileManager = _fileManager
+    constructor(accounts: UserAccount[], fileManager: JSONFileManager) {
+        this.accounts = accounts
+        this.fileManager = fileManager
     }
 
-   
+   createAccount(accounts: UserAccount): void {
+    this.accounts.push(accounts)
+   }
+
 
 }
 

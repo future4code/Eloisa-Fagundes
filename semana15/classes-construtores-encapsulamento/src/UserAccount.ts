@@ -20,9 +20,21 @@ export class UserAccount {
         return this.balance
     } 
 
+    getAccounts():any {
+        return this.name 
+    }
+
 }
 
 const minhaConta = new UserAccount(1, "123", "Eloisa", 29, [])
+const suaConta = new UserAccount(100, "321", "Fernanda", 28 , [])
+const outraConta = new UserAccount(562, "654", "Lola", 31 , [])
 
-const guardaSaldo = minhaConta.getBalance()
-console.log("Meu saldo é R$" + guardaSaldo)
+const meuSaldo = minhaConta.getBalance()
+console.log("Meu saldo é R$" + meuSaldo)
+
+const meuSaldoDois = suaConta.getBalance()
+console.log("Meu saldo é R$" + meuSaldoDois)
+
+const meuSaldoTres = outraConta.getBalance()
+console.log("Meu saldo é R$" + meuSaldoTres)
