@@ -21,6 +21,15 @@ var User = /** @class */ (function () {
     User.prototype.getName = function () {
         return this.name;
     };
+    // Exercício 4 
+    //       public getIntroduceYourself(): string {
+    //           return "Olá, bom dia!"
+    //       }
+    //   }
+    // Exercício 5
+    User.prototype.getIntroduceYourself = function () {
+        return ("Olá, sou " + ("" + this.getName()) + ". Bom dia!");
+    };
     return User;
 }());
 exports.User = User;

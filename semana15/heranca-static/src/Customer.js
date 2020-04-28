@@ -1,8 +1,7 @@
 "use strict";
+// EXERCÍCIO 2
 // a. Quantas vezes a mensagem `"Chamando o construtor da classe Customer"` foi impressa no terminal? 
-// RESPOSTA: 1 vez, depois de imprimir User.
-// b. Quantas vezes a mensagem `"Chamando o construtor da classe User"` foi impressa no terminal? Por quê?
-// RESPOSTA:
+// RESPOSTA: 1 vez, depois de imprimir  a chamada do construtor User.
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -17,7 +16,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-var exercicio1_1 = require("./exercicio1");
+// b. Quantas vezes a mensagem `"Chamando o construtor da classe User"` foi impressa no terminal? Por quê?
+// RESPOSTA: 2 vezes, na primeira chamada da classe pai e na segunda chamada do construtor da classe filha Customer.
+var User_1 = require("./User");
 var Customer = /** @class */ (function (_super) {
     __extends(Customer, _super);
     function Customer(id, email, name, password, creditCard) {
@@ -31,9 +32,11 @@ var Customer = /** @class */ (function (_super) {
         return this.creditCard;
     };
     return Customer;
-}(exercicio1_1.User));
-var myOtherAccount = new Customer("2", "fernanda@gmail.com", "Fernanda", "1234", "200");
+}(User_1.User));
+var myOtherAccount = new Customer("2", "fernanda@gmail.com", "Fernanda", "qwerty", "200");
 console.log(myOtherAccount.getId());
 console.log(myOtherAccount.getEmail());
 console.log(myOtherAccount.getName());
-console.log('O número do cartão é R$' + myOtherAccount.getCreditCard());
+console.log('O número do cartão é ' + myOtherAccount.getCreditCard());
+// Exercício 4 
+console.log(myOtherAccount.getIntroduceYourself());

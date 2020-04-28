@@ -1,7 +1,10 @@
+
+// Exercício3
+
 // a. Seria possível imprimir a senha (password) atrelada a essa instância? Por quê?
 // RESPOSTA: Não, pois ela não tem um método atrelado ao password na classe pai.
 
-import { User } from "./exercicio1"
+import { User } from "./User"
 
 class Customer extends User {
     public purchaseTotal: number = 0;
@@ -32,6 +35,7 @@ class Customer extends User {
 
 const myOtherAccount = new Customer("2", "fernanda@gmail.com", "Fernanda", "qwerty", "123 456 789", 200);
 
+// EXERCÍCIO 3 : Agora, imprima todas as informações possíveis da instância que você criou: o id, o nome, o email, o valor total de compra (purchaseTotal) e o cartão de crédito (creditCard).
 console.log(myOtherAccount.getId())
 console.log(myOtherAccount.getEmail())
 console.log(myOtherAccount.getName())
