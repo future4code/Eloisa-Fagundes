@@ -8,7 +8,7 @@
       "target": "es6",
       "module": "commonjs"
     },
-    "include": ["src/**/*", "build/Exercicio1.js", "build/Exercicio3.js", "build/Exercicio2.js"],
+    "include": ["src/**/*"],
     "exclude": ["node_modules"]
   }
   

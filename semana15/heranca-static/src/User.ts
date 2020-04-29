@@ -1,8 +1,4 @@
-// a. Seria possível imprimir a senha (`password`) atrelada a essa instância?
-// RESPOSTA: Não. Pois não tem um método que chame a instância do password. Para que ele funcionar é possível acrescentar um método password.
 
-// b. Quantas vezes a mensagem `"Chamando o construtor da classe User"` foi impressa no terminal?
-// RESPOSTA: 1 vez.
 
 export class User {
     private id: string;
@@ -50,8 +46,4 @@ export class User {
     }
 }
 
-const myAccount = new User("1", "eloisa@gmail.com", "Eloisa", "qwerty");
 
-console.log(myAccount.getId())
-console.log(myAccount.getEmail())
-console.log(myAccount.getName())
