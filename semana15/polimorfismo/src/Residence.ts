@@ -13,3 +13,4 @@ export class Residence extends Place {
     return this.residentsQuantity
    }
   }
+
