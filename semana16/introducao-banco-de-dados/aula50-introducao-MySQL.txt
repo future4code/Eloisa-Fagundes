@@ -1,0 +1,12 @@
+### Exercício 1
+a.)
+CREATE TABLE: Cria uma nova tabela de dados
+VARCHAR(255): representa que esse é um campo de strings e que aceita no máximo 255 caracteres.
+NOT NULL: esse campo não pode ser null
+
+b.) O SHOW DATABASE; mostrou o dado dos schema, do meu banco de dados nomeado sagan_eloisa_db e o SHOW TABLES; mostrou minha tabela de actor.
+
+c.) O comando `SHOW Actor` não rodou, ele mostrou um erro dizia que Actor está em posição errada.  O comando `DESCRIBE Actor` funcionou e sua saída esão os campos, seus tipos, se são null e a chave.
+
+### Exercício 2
+a) 
