@@ -105,3 +105,27 @@ gender FROM Actor
 GROUP BY gender;
 ```
 ### Exercício 6
+
+a) 
+```sh
+ALTER TABLE Episode ADD playing_limit_date DATE;
+```
+
+b) 
+```sh
+ALTER TABLE Episode CHANGE rating rating FLOAT;
+```
+
+c) 
+```sh
+UPDATE Episode
+SET playing_limit_date = "2020-12-20"
+WHERE id = "001";
+
+
+UPDATE Episode
+SET rating = 8.5
+WHERE id = "003";
+```
+
+
