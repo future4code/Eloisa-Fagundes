@@ -1,6 +1,8 @@
 import knex from "knex";
 import dotenv from "dotenv";
 
+
+
 dotenv.config();
 // console.log(process.env.DB_HOST)
 
@@ -15,7 +17,7 @@ const connection = knex({
   },
 });
 
-import express from "express";
+import express, { Request, Response} from "express";
 
 import { AddressInfo } from "net";
 
@@ -83,3 +85,87 @@ const searchActor = async (name: string): Promise<any> => {
 //   console.log(result)
 // })()
  
+const getActorsGender = async (gender: string): Promise<any> => {
+  const result = await connection.raw(`
+  SELECT COUNT(*) as count FROM Actor WHERE gender = "${gender}"
+  `)
+
+  const count = result[0][0].count;
+  return count;
+ 
+}
+
+// async function main () {
+//   const resultMale = await getActorsGender("male")
+//   const resultFemale = await getActorsGender("female")
+//   console.log (resultMale)
+//   console.log (resultFemale)
+// }
+
+// main()
+
+const changeSalary = async(id: string, salary: number): Promise<any> => {
+  await connection("Actor")
+  .update({
+    salary: salary,
+  })
+  .where("id", id)
+}
+
+// (async () => {
+//   const result = await changeSalary("001", 10)
+//   console.log("sua alteração foi realizada com sucesso!")
+// })()
+
+const deleteActor =  async (id: string): Promise<any> => {
+  await connection("Actor")
+  .delete()
+  .where("id", id)
+}
+
+// (async () => {
+//   const result = await deleteActor("002")
+//   console.log("a informação foi apagada com sucesso!")
+// })()
+
+
+
+
+
+
+const averageSalary = async (gender: string): Promise<any> => {
+  const result = 
+  await connection("Actor")
+  .avg("salary as average")
+  .where({ gender })
+
+  console.log(result[0].average)
+}
+
+
+// async function main () {
+//   const resultFemale = await averageSalary ("female")
+// }
+// main()
+
+
+const getActorById = async (id: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT * FROM Actor WHERE id = '${id}'
+  `)
+
+	return result[0][0]
+}
+
+app.get("/actor/:id", async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const actor = await getActorById(id);
+
+    res.status(200).send(actor)
+  } catch (err) {
+    res.status(400).send({
+      message: err.message,
+    });
+  }
+});
