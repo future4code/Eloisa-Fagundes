@@ -1,82 +1,54 @@
 ### Exercício 1
-a) As strings são melhores por existir mais possibilidades de combinações, uma chance menor de conflitar com uma outra combinação já existente no banco e por ser uma prática
-já estabelecida no mercado.
+a) O que são os round e salt? Que valores são recomendados para o round? Que valor você usou? Por quê?
+RESPOSTA: 
 
-b) 
+b) Round ou custo é um valor atribuído para um salt, que por sua vez é uma string que acrescenta mais aleatoriedade ao código. É recomendado o custo 12 para o hash. Eu usei 12 pois é o recomendado.
+
+
+c)
 ```
-export class IdGenerator {
-    public generate(): string {
-        return v4()
+export class HashManager {
+    public async hash(text: string): Promise<string> {
+        const rounds = Number(process.env.BCRYPT_COST)
+        const salt = await bcrypt.genSalt(rounds)
+        const hash = await bcrypt.hash(text, salt)
+        return hash
     }
 }
+
+```
+
+d)
+```
+public async compare(text: string, hash: string): Promise<boolean> {
+        return bcrypt.compare(text, hash)
+    }
 ```
 
 ### Exercício 2
-a) Esse código cria um novo usuário no banco de dados.
+a) 
 
 b) 
 ```
-CREATE TABLE User (
-	id VARCHAR(255) PRIMARY KEY, 
-  email VARCHAR(255) UNIQUE NOT NULL, 
-  password VARCHAR(255) UNIQUE NOT NULL
-);
+
 ```
 
 c) 
 ```
-public async createUser(
-        id: string,
-        email: string,
-        password: string
-    ): Promise<void> {
-        await this.connection()
-            .insert({
-                id,
-                email,
-                password
-            })
-            .into(UserDatabase.TABLE_NAME)
 
-
-    }
 ```
 
 d) 
 ```
-const newUser = new UserDatabase()
-newUser.createUser("001", "lola@gmail.com","qwerty")
+
 ```
 
 
 ### Exercício 3
-a) As string diz exatamente o que vamos receber UMA STRING, como solicitado pelo banco de dados sem isso o código pode quebrar.
+a)
 
 b) 
 ```
-import * as jwt from "jsonwebtoken"
-
-
- export class Authenticator {
-     private static EXPIRES_IN = "1min"
-     public generateToken(input: AuthenticationData):string {
-         const token = jwt.sign(
-             {
-                 id: input.id,
-             },
-             process.env.JWT_KEY as string,
-             {
-                 expiresIn:Authenticator.EXPIRES_IN,
-             }
-         )
-
-         return token
-     }
- }
-
- interface AuthenticationData {
-     id: string
- }
 ```
 
 c) 

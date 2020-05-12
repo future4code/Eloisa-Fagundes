@@ -31,7 +31,26 @@ export class UserDatabase {
             .into(UserDatabase.TABLE_NAME)
     }
 
-};
+    public async getUserByEmail(
+        email: string
+        ): Promise<any> {
+        const result = await this.connection()
+          .select("*")
+          .from(UserDatabase.TABLE_NAME)
+          .where({ email });
+    
+        return result[0];
+    }
 
-const newUser = new UserDatabase()
-newUser.createUser("001", "lola@gmail.com","qwerty")
+    public async getUserById(id: string): Promise<any> {
+        const result = await this.connection()
+          .select("*")
+          .from(UserDatabase.TABLE_NAME)
+          .where({ id });
+    
+        return result[0];
+      }
+}
+
+// const newUser = new UserDatabase()
+// newUser.createUser("002", "eloisa@gmail.com","123456")
