@@ -42,67 +42,151 @@
     Agora, vamos realizar o teste unitário da função `validateCharacter`
 
     *a. Crie um teste que represente o comportamento da função com um personagem com o nome vazio*
+     ```ts
+        test("Should return false when input.name is empty.", () => {
+        const input = {
+            name: "",
+            life: 10,
+            strenght: 10,
+            defense: 10
+        }
+
+        const output = validateCharacter(input)
+
+        expect(output).toBe(false)
+      })
+    ```
 
     *b. Crie um teste que represente o comportamento da função com um personagem com a vida vazia*
+    ```ts
+       test("Should return false when input.life is empty.", () => {
+        const input = {
+            name: "Eloisa",
+            life: undefined,
+            strenght: 10,
+            defense: 10
+        }
+
+        const output = validateCharacter(input)
+
+        expect(output).toBe(false)
+    })
+    ```
 
     *c. Crie um teste que represente o comportamento da função com um personagem com a força vazia*
+    ```ts
+       test("Should return false when input.strenght is empty.", () => {
+        const input = {
+            name: "Eloisa",
+            life: 10,
+            strenght: undefined,
+            defense: 10
+        }
+
+        const output = validateCharacter(input)
+
+        expect(output).toBe(false)
+    })
+    ```
 
     *d. Crie um teste que represente o comportamento da função com um personagem com a defesa vazia*
+    ```ts
+     test("Should return false when input.defense is empty.", () => {
+        const input = {
+            name: "Eloisa",
+            life: 10,
+            strenght: 10,
+            defense: undefined
+        }
+
+        const output = validateCharacter(input)
+
+        expect(output).toBe(false)
+
+    })  
+     ```
 
     *e. Crie um teste que represente o comportamento da função com um personagem com a vida ou a força ou a defesa com um valor negativo*
+    ```ts
+     test("Should return false when input.life, input.defense or input.strenght is negative.", () => {
+        const inputOne = {
+            name: "Eloisa",
+            life: -10,
+            strenght: 10,
+            defense: 10
+        }
+        const inputTwo = {
+            name: "Eloisa",
+            life: 10,
+            strenght: -10,
+            defense: 10
+        }
+        const inputThree = {
+            name: "Eloisa",
+            life: 10,
+            strenght: 10,
+            defense: -10
+        }
+
+        const outputOne = validateCharacter(inputOne)
+        const outputTwo = validateCharacter(inputTwo)
+        const outputThree = validateCharacter(inputThree)
+
+        expect(outputOne).toBe(false)
+        expect(outputTwo).toBe(false)
+        expect(outputThree).toBe(false)
+    })  
+     ```
 
     f*. Crie um teste que represente o comportamento da função com um personagem com a vida ou a força ou a defesa com o valor `0`*
+    ```ts
+       test("Should return true when input.life, input.defense or input.strenght is equal 0.", () => {
+        const inputOne = {
+            name: "Eloisa",
+            life: 0,
+            strenght: 10,
+            defense: 10
+        }
+        const inputTwo = {
+            name: "Eloisa",
+            life: 10,
+            strenght: 0,
+            defense: 10
+        }
+        const inputThree = {
+            name: "Eloisa",
+            life: 10,
+            strenght: 10,
+            defense: 0
+        }
+
+        const outputOne = validateCharacter(inputOne)
+        const outputTwo = validateCharacter(inputTwo)
+        const outputThree = validateCharacter(inputThree)
+
+        expect(outputOne).toBe(true)
+        expect(outputTwo).toBe(true)
+        expect(outputThree).toBe(true)
+
+    })
+     ```
 
     g*. Crie um teste que represente o comportamento da função com um personagem com as informações validas*
 
-    - Dicas
+    ```tsx
+      test("Should return true when input.name, input.life, input.defense and input.strenght is valid.", () => {
+        const input = {
+            name: "Eloisa",
+            life: 10,
+            strenght: 10,
+            defense: 10
+        }
 
-        (Vamos dar 3 dicas só, porque os itens são muito parecidos)
+        const output = validateCharacter(input)
 
-        a.
-
-        ```tsx
-        test("Should return false for empty name", () => {
-            const result = validateCharacter({
-              name: "",
-              life: 1500,
-              strength: 300,
-              defense: 500,
-            });
-
-            expect(result).toBe(false);
-          });
-        ```
-
-        f.
-
-        ```tsx
-        test("Should return true for life 0", () => {
-            const result = validateCharacter({
-              name: "Scorpion",
-              life: 0,
-              strength: 300,
-              defense: 500,
-            });
-
-            expect(result).toBe(true);
-          });
-        ```
-
-        g.
-
-        ```tsx
-        test("Should return true for all valid inputs", () => {
-            const result = validateCharacter({
-              name: "Scorpion",
-              life: 1500,
-              strength: 300,
-              defense: 500,
-            });
-
-            expect(result).toBe(true);
-          });
-        ```
+        expect(output).toBe(true)
+    })
+    ```
 
 - Exercício 3
 
