@@ -8,8 +8,8 @@ export class User {
     private nickname: string,
     private password: string,
     private role: UserRole,
-    private description?: string,
-    private approved?: boolean
+    private approved: number,
+    private description?: string
   ) { }
 
   public getId(): string {
@@ -40,8 +40,8 @@ export class User {
     return this.description as string
   }
 
-  public getApproved(): boolean {
-    return this.approved as boolean
+  public getApproved(): number {
+    return this.approved as number
   }
 }
 

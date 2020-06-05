@@ -19,10 +19,11 @@ export class UserBusiness {
     email: string,
     nickname: string,
     password: string,
-    role: string
+    role: string,
+    approved: number
      ) {
 
-      if( !name || !email || !password || !role) {
+      if( !name || !email || !password || !role || !approved) {
         throw new InvalidParameterError("Parâmetros inválidos")
       }
 
@@ -34,19 +35,13 @@ export class UserBusiness {
         throw new InvalidParameterError("Senha inválida, verifique se ea possui mais de 6 caracteres.")
       }
 
+    const id = this.idGenerator.generate()
 
-    const idGenerator = new IdGenerator()
-    const id = idGenerator.generate()
+    const hashPassword = await this.hashGenerator.generateHash(password)
 
-    const hashManager = new HashManager()
-    const hashPassword = await hashManager.generateHash(password)
+    const user = await this.userDatabase.createUser(new User(id, name, email, nickname, hashPassword, stringToUserRole(role), approved))
 
-    const user = new User(id, name, email, nickname, hashPassword, stringToUserRole(role))
-
-    const userDatabase = new UserDatabase()
-    await userDatabase.createUser(user)
-
-    const acessToken = this.generate({id, role})
-    return {acessToken}
+    const acessToken = this.tokenGenerator.generate({ id, role })
+    return { acessToken }
   }
 }

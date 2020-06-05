@@ -18,6 +18,7 @@ export class UserDatabase extends BaseDataBase {
                 dbModel.description,
                 dbModel.approved
             )
+
         )
     }
 
@@ -29,7 +30,8 @@ export class UserDatabase extends BaseDataBase {
                 email: user.getEmail(),
                 nickname: user.getNickname(),
                 password: user.getPassword(),
-                role: user.getRole()
+                role: user.getRole(),
+                approved: user.getApproved()
             })
             .into(this.tableName)
     }
