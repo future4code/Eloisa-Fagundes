@@ -1,0 +1,26 @@
+{
+  "name": "logic-exercises",
+  "version": "1.0.0",
+  "description": "exercícios de lógica diários",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node build/exercise2.ts --target es6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future4code/Eloisa-Fagundes.git"
+  },
+  "keywords": [
+    "typescript",
+    "javascript"
+  ],
+  "author": "Eloisa Fagundes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/future4code/Eloisa-Fagundes/issues"
+  },
+  "homepage": "https://github.com/future4code/Eloisa-Fagundes#readme",
+  "dependencies": {
+    "@types/node": "^12.12.37"
+  }
+}
