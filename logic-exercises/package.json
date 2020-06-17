@@ -4,7 +4,8 @@
   "description": "exercícios de lógica diários",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node build/exercise2.js --target es6"
+
+    "start": "tsc && node build/exercise3.js --target es6"
   },
   "repository": {
     "type": "git",
