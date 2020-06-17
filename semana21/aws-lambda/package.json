@@ -1,19 +1,16 @@
 {
-  "name": "logic-exercises",
+  "name": "aws-lambda",
   "version": "1.0.0",
   "description": "exercícios de lógica diários",
   "main": "index.js",
   "scripts": {
-
-    "start": "tsc && node build/exercise3.js --target es6"
+    "start": "tsc && node build/exercicio2.js --target es6"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/future4code/Eloisa-Fagundes.git"
   },
   "keywords": [
-    "lógica",
-    "teste",
     "typescript",
     "javascript"
   ],
