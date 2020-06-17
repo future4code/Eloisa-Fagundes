@@ -4,7 +4,7 @@
   "description": "exercícios de lógica diários",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node build/exercise4.js --target es6"
+    "start": "tsc && node build/exercise5.js --target es6"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/future4code/Eloisa-Fagundes#readme",
   "dependencies": {
-    "@types/node": "^12.12.37"
+    "@types/node": "^12.12.37",
+    "moment": "^2.26.0"
   }
 }
