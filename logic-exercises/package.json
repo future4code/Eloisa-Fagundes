@@ -4,7 +4,8 @@
   "description": "exercícios de lógica diários",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node build/exercise5.js --target es6"
+    "test": "node ./node_modules/jest/bin/jest.js",
+    "start": "tsc && node build/checaParentesesValidos.js --target es6"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,13 @@
   },
   "homepage": "https://github.com/future4code/Eloisa-Fagundes#readme",
   "dependencies": {
+    "@types/jest": "^26.0.4",
     "@types/node": "^12.12.37",
-    "moment": "^2.26.0"
+    "moment": "^2.26.0",
+    "ts-jest": "^26.1.2",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
   }
 }
