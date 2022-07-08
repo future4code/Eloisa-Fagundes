@@ -24,6 +24,6 @@
   "homepage": "https://github.com/future4code/Eloisa-Fagundes#readme",
   "dependencies": {
     "@types/node": "^12.12.37",
-    "moment": "^2.26.0"
+    "moment": "^2.29.4"
   }
 }
